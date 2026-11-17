@@ -1,0 +1,1317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Winros · Indonesian Kemenyan &amp; Gambir</title>
+<meta name="description" content="PT Winros Sukses Indonesia: Menyan Madu (Gum Benzoin) in 10 grades, Menyan Bakar (Gum Benjamin) in 11 variants, and Gambir. Natural ingredients from Indonesia to the world.">
+<meta property="og:title" content="Winros · Indonesian Kemenyan &amp; Gambir">
+<meta property="og:description" content="Nature's finest. From Indonesia to the world.">
+<meta property="og:image" content="img/logo.png">
+<meta name="theme-color" content="#f6f4ef">
+<link rel="icon" href="img/logo-icon.png">
+<link rel="alternate" hreflang="en" href="?lang=en">
+<link rel="alternate" hreflang="id" href="?lang=id">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: pinned scroll scenes on a clean white stage, leaf-green and sky-blue accents from the Winros company profile; one 1160px content column */
+:root{
+  --ink:#f6f4ef; --stage:#ffffff; --panel:#ffffff; --line:#d9e5d0;
+  --rose:#5f9e1f;       /* hijau daun (company profile) */
+  --lime:#8dc63f;       /* hijau muda logo */
+  --sky:#a0603e;        /* biru langit */
+  --blush:#46524b; --amber:#8a5232; --cream:#1a2e28; --muted:#7d877f; --err:#d64545; --onphoto:#ffffff;
+  --glass:rgba(255,255,255,.86); --veil:rgba(201,164,108,.14);
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  color-scheme:light;
+}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--ink);color:var(--cream);font-family:var(--body);font-size:16px;line-height:1.6;overflow-x:clip;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--ink)}
+.wrap{max-width:1160px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.02em;line-height:1.02}
+p{margin:0}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--rose);outline-offset:3px;border-radius:6px}
+.eyebrow{font-family:var(--mono);font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rose)}
+.en{font-style:italic;color:var(--muted)}
+
+/* nav */
+.nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:50;background:var(--glass);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:20px;height:56px}
+.logo{font-family:var(--display);font-weight:800;font-size:1.15rem;letter-spacing:.02em;text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo img{height:30px;width:auto;display:block}
+.brand-logo{width:clamp(150px,18vw,210px);height:auto;display:block}
+.nav-links{display:flex;gap:22px;margin-left:auto;font-size:.88rem;color:var(--muted)}
+.nav-links a{text-decoration:none}
+.nav-links a:hover{color:var(--cream)}
+.cart-btn{display:flex;align-items:center;gap:8px;background:var(--rose);color:#fff;border:0;border-radius:999px;padding:7px 14px;font-weight:700;font-size:.88rem;white-space:nowrap}
+.cart-btn b{background:#fff;color:var(--rose);border-radius:999px;min-width:22px;height:22px;display:inline-grid;place-items:center;font-size:.75rem;padding:0 6px}
+@media (max-width:820px){.nav-links{display:none}.cart-btn{margin-left:auto}}
+
+/* pinned scenes */
+.scene{position:relative}
+.pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.pin canvas.bg{position:absolute;inset:0;width:100%;height:100%;display:block}
+
+/* hero */
+.hero{height:140vh}
+.hero-copy{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:22px;padding-top:var(--navh);transform-origin:50% 40%;will-change:transform,opacity}
+.hero h1{font-size:clamp(3.2rem,11.5vw,9.8rem);font-weight:800;background:linear-gradient(175deg,var(--cream) 15%,var(--rose) 60%,var(--sky) 95%);-webkit-background-clip:text;background-clip:text;color:transparent;max-width:11ch}
+.hero .lead{font-size:clamp(1.05rem,1.8vw,1.3rem);color:var(--blush);max-width:36ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:12px 22px;font-weight:700;text-decoration:none;border:1px solid transparent;font-size:.95rem}
+.btn-rose{background:var(--rose);color:#fff}
+.btn-rose:hover{background:var(--sky)}
+.btn-ghost{border-color:var(--line);color:var(--cream);background:transparent}
+.btn-ghost:hover{border-color:var(--rose)}
+.scroll-hint{position:absolute;left:50%;bottom:max(22px,env(safe-area-inset-bottom,0px));transform:translateX(-50%);font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;color:var(--muted);text-transform:uppercase}
+
+/* word reveal */
+.reveal{padding-block:20vh 22vh}
+.big-words{font-family:var(--display);font-weight:600;font-size:clamp(1.65rem,4.3vw,3.4rem);line-height:1.14;max-width:22ch;letter-spacing:-.015em}
+.w{opacity:.3;transition:opacity .25s linear,color .25s linear}
+.w.on{opacity:1}
+.w.hl.on{color:var(--rose)}
+
+/* tree */
+.tree{height:250vh}
+.steps{position:absolute;left:0;right:0;bottom:max(6vh,env(safe-area-inset-bottom,0px))}
+.steps ol{list-style:none;margin:0;padding:18px 20px;display:grid;gap:4px;max-width:400px;background:var(--glass);border:1px solid var(--line);border-radius:18px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.steps li{display:grid;grid-template-columns:34px 1fr;gap:4px 10px;opacity:.38;transition:opacity .3s}
+.steps li.on{opacity:1}
+.steps li span{font-family:var(--mono);font-size:.78rem;color:var(--rose);padding-top:3px}
+.steps li strong{font-family:var(--display);font-size:1.1rem}
+.steps li p{grid-column:2;font-size:.88rem;color:var(--muted);max-height:0;overflow:hidden;transition:max-height .35s}
+.steps li.on p{max-height:6em}
+.scene-title{position:absolute;left:0;right:0;top:calc(var(--navh) + 6vh)}
+.scene-title h2{font-size:clamp(2rem,5.4vw,4rem);max-width:13ch}
+
+/* macro */
+.macro{height:170vh}
+.zoom-read{position:absolute;right:0;left:0;top:calc(var(--navh) + 5vh);display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.zoom-read h2{font-size:clamp(1.8rem,4.6vw,3.6rem);max-width:12ch;color:var(--onphoto);text-shadow:0 2px 24px rgba(0,0,0,.6)}
+.mag{font-family:var(--mono);font-size:clamp(2.2rem,7vw,5.6rem);color:var(--lime);font-variant-numeric:tabular-nums;line-height:1;text-align:right;text-shadow:0 2px 24px rgba(0,0,0,.6)}
+.mag small{display:block;font-size:.72rem;letter-spacing:.18em;color:var(--onphoto);text-transform:uppercase;margin-top:6px}
+.macro-notes{position:absolute;left:0;right:0;bottom:max(6vh,env(safe-area-inset-bottom,0px))}
+.macro-notes p{max-width:40ch;font-size:clamp(1rem,1.7vw,1.15rem);color:var(--blush);background:var(--glass);border:1px solid var(--line);border-radius:16px;padding:14px 18px}
+
+/* products */
+.products{height:220vh}
+.prod-panel{position:absolute;left:0;right:0;top:calc(var(--navh) + 8vh);pointer-events:none}
+.prod-copy{max-width:430px;display:grid;gap:14px;pointer-events:auto}
+.prod-copy h2{font-size:clamp(2.4rem,6vw,4.8rem)}
+.prod-copy.madu h2{color:var(--amber)}
+.prod-copy .desc{color:var(--blush);font-size:1.02rem}
+.spec{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;font-size:.9rem;margin:4px 0 0;border-top:1px solid var(--line);padding-top:12px}
+.spec dt{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:2px}
+.spec dd{margin:0}
+.prod-switch{position:absolute;right:0;left:0;bottom:max(5vh,env(safe-area-inset-bottom,0px))}
+.prod-switch .wrap{display:flex;justify-content:flex-end}
+.dots{display:flex;gap:8px;background:var(--glass);border:1px solid var(--line);border-radius:999px;padding:6px}
+.dots span{font-size:.8rem;padding:6px 14px;border-radius:999px;color:var(--muted);transition:background .3s,color .3s}
+.dots span.on{background:var(--rose);color:#fff;font-weight:700}
+@media (max-width:760px){
+  .prod-panel{top:auto;bottom:calc(max(5vh,env(safe-area-inset-bottom,0px)) + 56px)}
+  .prod-copy{background:var(--glass);border:1px solid var(--line);border-radius:18px;padding:16px;max-width:none}
+  .prod-copy .spec{display:none}
+  .prod-switch .wrap{justify-content:center}
+}
+
+/* grades */
+.grades .pin{display:flex;flex-direction:column;justify-content:center;gap:20px;padding-top:var(--navh)}
+.grades-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.grades-head h2{font-size:clamp(2rem,5vw,3.8rem);max-width:14ch}
+.grades-head p{color:var(--muted);max-width:38ch;font-size:.95rem}
+.track{display:flex;gap:18px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));will-change:transform;width:max-content}
+.gcard{width:min(78vw,330px);flex:none;background:var(--panel);box-shadow:0 10px 30px rgba(60,45,25,.08);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
+.gcard .shot{position:relative;aspect-ratio:4/3;max-width:100%}
+.gcard canvas{width:100%;height:100%;display:block;touch-action:pan-y;cursor:crosshair}
+.badge{position:absolute;left:12px;top:12px;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;background:var(--glass);border:1px solid var(--line);border-radius:999px;padding:4px 10px;pointer-events:none}
+.gcard .body{padding:14px 18px 18px;display:grid;gap:8px;flex:1}
+.gcard h3{font-size:1.45rem}
+.gcard .kind{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rose)}
+.gcard.madu .kind{color:var(--amber)}
+.gcard .d{font-size:.9rem;color:var(--blush)}
+.gfoot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:auto;padding-top:10px;border-top:1px solid var(--line)}
+.gfoot span{font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+.gfoot button{background:transparent;border:1px solid var(--rose);color:var(--rose);border-radius:999px;padding:7px 14px;font-weight:700;font-size:.82rem;white-space:nowrap}
+.gfoot button:hover{background:var(--rose);color:#fff}
+.divider-card{width:min(64vw,260px);flex:none;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;padding:22px;border-radius:22px;background:linear-gradient(160deg,var(--veil),var(--stage) 75%);border:1px solid var(--line)}
+.divider-card h3{font-size:2.2rem}
+.divider-card.madu h3{color:var(--amber)}
+.divider-card p{color:var(--muted);font-size:.9rem}
+.hint{font-family:var(--mono);font-size:.72rem;color:var(--muted);letter-spacing:.08em}
+
+/* about / since 2017 */
+.since{height:160vh}
+.since .pin{display:grid;align-items:center}
+.since-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.since-grid>*{min-width:0}
+.year{font-family:var(--display);font-weight:800;font-size:clamp(5rem,19vw,15rem);line-height:.85;letter-spacing:-.05em;background:linear-gradient(180deg,var(--lime),var(--sky));-webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:tabular-nums}
+.year-sub{font-family:var(--mono);font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.since-copy{display:grid;gap:16px;max-width:46ch}
+.since-copy h2{font-size:clamp(1.8rem,4vw,3rem)}
+.since-copy p{color:var(--blush)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:6px}
+.facts div{border-top:1px solid var(--line);padding-top:10px}
+.facts strong{display:block;font-family:var(--display);font-size:1.8rem;color:var(--cream)}
+.facts span{font-size:.8rem;color:var(--muted)}
+@media (max-width:820px){.since-grid{grid-template-columns:1fr;gap:18px}.since .pin{padding-top:var(--navh)}.since-copy p{font-size:.92rem}}
+
+/* HOKI */
+.hoki{height:220vh}
+.hoki .pin{display:flex;flex-direction:column;justify-content:center;padding-top:var(--navh)}
+.hoki-letters{display:flex;justify-content:space-between;gap:2vw}
+.hoki-letters span{font-family:var(--display);font-weight:800;font-size:clamp(5rem,20vw,16rem);line-height:.8;color:#eef4e9;-webkit-text-stroke:1px #c9d8bf;transition:color .4s,transform .4s,text-shadow .4s}
+.hoki-letters span.on{color:var(--lime);-webkit-text-stroke:0;text-shadow:0 0 60px rgba(201,164,108,.45);transform:translateY(-8px)}
+.hoki-letters span.done{color:var(--sky);-webkit-text-stroke:0}
+.hoki-card{min-height:9.5em;display:grid;gap:6px;max-width:52ch;align-content:start}
+.hoki-card h3{font-size:clamp(1.8rem,4.2vw,3rem)}
+.hoki-card .val{font-size:1.15rem;color:var(--blush)}
+
+/* leader + vision */
+.leader{padding-block:16vh 8vh}
+.leader .big-words{font-size:clamp(1.5rem,3.6vw,2.8rem);line-height:1.18;max-width:28ch;margin-top:20px}
+.quote-by{display:flex;align-items:center;gap:14px;margin-top:28px}
+.quote-by .av{width:52px;height:52px;border-radius:50%;background:linear-gradient(160deg,var(--sky),var(--lime));display:grid;place-items:center;font-family:var(--display);font-weight:800;color:#fff}
+.quote-by strong{display:block;font-family:var(--display);font-size:1.15rem}
+.quote-by span{color:var(--muted);font-size:.88rem}
+.vm{padding-block:8vh 14vh;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.vm>*{min-width:0}
+@media (max-width:760px){.vm{grid-template-columns:1fr}}
+.vm article{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:28px;display:grid;gap:12px;align-content:start;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.vm article.off-l{transform:translateX(-40px) rotate(-1.5deg)}
+.vm article.off-r{transform:translateX(40px) rotate(1.5deg)}
+.vm h3{font-size:2.4rem}
+.vm article:last-child h3{color:var(--amber)}
+.vm p{color:var(--blush)}
+
+/* procedure + org */
+.proc{padding-block:10vh}
+.proc h2,.org h2{font-size:clamp(2rem,5vw,3.6rem);max-width:16ch;margin-top:8px}
+.proc-flow{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:stretch;margin-top:32px}
+.proc-flow>*{min-width:0}
+@media (max-width:760px){.proc-flow{grid-template-columns:1fr}.proc-flow .arrow{transform:rotate(90deg);justify-self:center}}
+.pstep{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:22px;display:grid;gap:10px;align-content:start}
+.pstep .n{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--lime);color:#fff;font-weight:800;font-family:var(--mono)}
+.pstep h3{font-size:1.5rem}
+.pstep p,.pstep li{color:var(--blush);font-size:.94rem}
+.pstep ul{margin:0;padding-left:18px;display:grid;gap:8px}
+.arrow{align-self:center;font-size:2rem;color:var(--rose)}
+.org{padding-block:6vh 14vh}
+.org-chart{margin-top:30px;display:grid;gap:18px;justify-items:center}
+.org-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.node{background:#f1ece2;border:1px solid var(--line);border-radius:14px;padding:12px 18px;font-family:var(--display);font-weight:600;min-width:110px;text-align:center;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.node.top{background:var(--lime);color:#fff;border-color:var(--lime);font-size:1.3rem;padding:14px 34px}
+.node.mid{border-color:var(--sky);color:var(--amber)}
+.org-chart .node{transform:translateY(14px)}
+.org-chart.lit .node{transform:none}
+.org-row:nth-child(2) .node{transition-delay:.1s}.org-row:nth-child(3) .node{transition-delay:.2s}.org-row:nth-child(4) .node{transition-delay:.3s}
+
+/* shop */
+.shop{padding-block:12vh 16vh;background:radial-gradient(ellipse 80% 60% at 70% 30%,var(--veil),var(--ink) 70%)}
+.shop-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:start;margin-top:36px}
+.shop-grid>*{min-width:0}
+@media (max-width:860px){.shop-grid{grid-template-columns:1fr}}
+.preview{position:relative;aspect-ratio:1/1;max-width:100%;border-radius:28px;overflow:hidden;border:1px solid var(--line);background:var(--stage)}
+.preview canvas{width:100%;height:100%;display:block;touch-action:pan-y;cursor:crosshair}
+.preview .badge{top:auto;bottom:16px;left:16px}
+.config{display:grid;gap:20px}
+.config h2{font-size:clamp(2rem,4.6vw,3.4rem)}
+.field-label{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;display:block}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:8px 12px;font-size:.88rem;text-align:left}
+.chip[aria-pressed="true"]{border-color:var(--rose);background:var(--veil);box-shadow:inset 0 0 0 1px var(--rose)}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.qty button{background:var(--panel);border:0;width:42px;height:42px;font-size:1.2rem}
+.qty output{min-width:72px;text-align:center;font-family:var(--mono)}
+.total-row{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:18px}
+.note{font-size:.82rem;color:var(--muted)}
+
+/* contact */
+.contact{padding-block:12vh;border-top:1px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;margin-top:24px}
+.contact-grid>*{min-width:0}
+@media (max-width:760px){.contact-grid{grid-template-columns:1fr}}
+.contact h2{font-size:clamp(2rem,5vw,3.6rem)}
+.cblock{display:grid;gap:14px}
+.cline{display:grid;grid-template-columns:100px 1fr;gap:12px;border-top:1px solid var(--line);padding-top:12px}
+.cline b{font-family:var(--mono);font-weight:400;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.cline span{user-select:all;min-width:0;overflow-wrap:anywhere}
+.mapcard{position:relative;border-radius:22px;border:1px solid var(--line);background:var(--panel);overflow:hidden;min-height:240px}
+.mapcard canvas{position:absolute;inset:0;width:100%;height:100%}
+
+/* drawer + checkout */
+.scrim{position:fixed;inset:0;background:rgba(15,33,28,.45);z-index:70;opacity:0;pointer-events:none;transition:opacity .25s}
+.scrim.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);z-index:80;background:var(--stage);border-left:1px solid var(--line);display:flex;flex-direction:column;transform:translateX(102%);transition:transform .35s cubic-bezier(.2,.8,.2,1);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);padding-right:env(safe-area-inset-right,0px)}
+.drawer.open{transform:none}
+.drawer header{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid var(--line)}
+.drawer header h2{font-size:1.4rem}
+.x{background:transparent;border:1px solid var(--line);border-radius:999px;width:36px;height:36px;font-size:1.1rem}
+.items{flex:1;overflow:auto;padding:12px 20px;display:grid;gap:12px;align-content:start}
+.item{display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:16px;background:var(--panel)}
+.item>*{min-width:0}
+.item img{width:56px;height:56px;border-radius:12px;object-fit:cover;background:var(--stage);display:block}
+.item img.blk{object-fit:contain;padding:4px;box-sizing:border-box}
+.item h4{margin:0;font-size:.95rem;font-family:var(--display)}
+.item p{font-size:.78rem;color:var(--muted)}
+.item .qty button{width:30px;height:30px;font-size:1rem}
+.item .qty output{min-width:50px;font-size:.8rem}
+.item .rm{background:none;border:0;color:var(--muted);font-size:.75rem;text-decoration:underline;padding:0}
+.empty{color:var(--muted);text-align:center;padding:40px 10px;display:grid;gap:12px;justify-items:center}
+.drawer footer{padding:16px 20px;border-top:1px solid var(--line);display:grid;gap:12px}
+.sum{display:flex;justify-content:space-between;font-family:var(--mono)}
+.btn-block{width:100%;justify-content:center}
+.btn[disabled]{opacity:.4;cursor:not-allowed}
+.modal{position:fixed;inset:0;z-index:90;display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));opacity:0;pointer-events:none;transition:opacity .25s}
+.modal.open{opacity:1;pointer-events:auto}
+.sheet{width:min(640px,100%);max-height:100%;overflow:auto;background:var(--stage);border:1px solid var(--line);border-radius:24px;padding:22px;display:grid;gap:18px;transform:translateY(16px) scale(.98);transition:transform .3s;box-sizing:border-box}
+.modal.open .sheet{transform:none}
+.sheet-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.sheet-top h2{font-size:1.6rem}
+.progress{display:flex;gap:6px}
+.progress i{flex:1;height:4px;border-radius:4px;background:var(--line)}
+.progress i.on{background:var(--rose)}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form .full{grid-column:1/-1}
+@media (max-width:560px){.form{grid-template-columns:1fr}}
+.form label{display:grid;gap:6px;font-size:.84rem;color:var(--muted)}
+.form input,.form textarea{font:inherit;color:var(--cream);background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:11px 12px;width:100%;box-sizing:border-box}
+.form input:focus,.form textarea:focus{border-color:var(--rose);outline:none}
+.form .bad{border-color:var(--err)}
+.errmsg{color:var(--err);font-size:.78rem;min-height:1em}
+.opts{display:grid;gap:8px}
+.opt{display:flex;justify-content:space-between;align-items:center;gap:12px;border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:var(--panel);cursor:pointer}
+.opt:has(input:checked){border-color:var(--rose);background:var(--veil)}
+.opt input{accent-color:var(--rose)}
+.opt span{display:flex;gap:10px;align-items:center}
+.opt small{color:var(--muted);font-size:.78rem;text-align:right}
+.recap{display:grid;gap:8px;font-size:.9rem}
+.recap .ln{display:flex;justify-content:space-between;gap:12px}
+.recap .ln span:last-child{font-family:var(--mono);white-space:nowrap}
+.sheet-actions{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.done{display:grid;gap:14px;text-align:center;justify-items:center}
+.done .seal{width:84px;height:84px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(160deg,var(--sky),var(--lime));color:#fff;font-size:2rem;font-weight:800}
+.done code{font-family:var(--mono);color:var(--rose);font-size:1.1rem}
+.done pre{text-align:left;white-space:pre-wrap;font-family:var(--mono);font-size:.78rem;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px;max-height:220px;overflow:auto;width:100%;box-sizing:border-box;margin:0;user-select:all}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);background:var(--cream);color:#fff;font-weight:700;border-radius:999px;padding:10px 18px;z-index:100;opacity:0;transition:opacity .25s,transform .25s;pointer-events:none;font-size:.9rem}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+footer.site{border-top:1px solid var(--line);padding-block:32px calc(32px + env(safe-area-inset-bottom,0px));color:var(--muted);font-size:.86rem}
+footer.site .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer.site strong{color:var(--cream);font-family:var(--display)}
+@media (prefers-reduced-motion:reduce){.vm article,.org-chart .node{transform:none!important;transition:none}}
+
+/* ===== Tema konsep "Natural Origin" (PDF konsep 17 Nov 2026): krem, hijau hutan, emas, terakota ===== */
+:root{
+  --ink:#f6f4ef; --stage:#ffffff; --panel:#ffffff; --line:#e3ddd0;
+  --rose:#1f4a3d;   /* hijau hutan - aksi utama */
+  --lime:#c9a46c;   /* emas */
+  --sky:#a0603e;    /* terakota */
+  --amber:#a0603e;
+  --blush:#4c5a54; --cream:#1a2e28; --muted:#7d877f; --err:#c0392b; --onphoto:#ffffff;
+  --glass:rgba(255,255,255,.88); --veil:rgba(201,164,108,.16);
+  --forest:#0f211c; --forest2:#1b302a; --gold:#d4b98c;
+  --display:"Lato",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:"Lato",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --navh:56px;
+}
+body{margin:0}
+img{max-width:100%}
+h1,h2,h3{letter-spacing:-.015em}
+h1,h2{font-weight:300!important}
+h1 b,h2 b,h3 b{font-weight:900;display:block}
+h3{font-weight:700}
+.eyebrow{font-family:var(--body);font-weight:700;letter-spacing:.14em;color:var(--sky)}
+.hero h1{max-width:12ch;line-height:1;background:linear-gradient(175deg,var(--cream) 30%,var(--rose) 70%,var(--lime) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h1 b{background:linear-gradient(175deg,var(--rose) 10%,var(--lime) 95%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn-rose:hover{background:var(--forest)}
+.btn{font-family:var(--body)}
+.opt i{font-style:normal}
+.tree{height:560vh}
+.steps li strong{font-weight:700}
+
+/* language bar (seperti Apple) + tombol bahasa */
+.nav{display:flex;flex-direction:column}
+.langbar{background:var(--forest);color:#e9e4d8}
+.nav .langbar .wrap{height:auto;min-height:52px;padding-top:8px;padding-bottom:8px;gap:12px;font-size:.86rem}
+.langbar p{flex:1;min-width:0}
+.langbar select{font:inherit;padding:7px 10px;border:1px solid rgba(255,255,255,.25);border-radius:10px;background:var(--forest2);color:#fff}
+.langbar .btn-rose{background:var(--gold);color:var(--forest)}
+.langbar .x{width:32px;height:32px;flex:none;border-color:rgba(255,255,255,.3);color:#fff}
+.btn.sm{padding:8px 16px;font-size:.85rem}
+@media (max-width:620px){.langbar p{display:none}.langbar select{flex:1;min-width:0}}
+.lang-btn{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid var(--line);border-radius:999px;padding:6px 11px;font-size:.8rem;font-weight:700;color:var(--cream);white-space:nowrap}
+.lang-btn svg{width:15px;height:15px}
+.lang-btn:hover{border-color:var(--rose)}
+@media (max-width:820px){.lang-btn{margin-left:auto}.nav .cart-btn{margin-left:0}}
+
+/* angka di atas */
+.stats{padding-block:12vh 6vh}
+.stats-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:26px}
+.stats-head h2{font-size:clamp(2rem,5vw,3.6rem);max-width:16ch;margin-top:8px}
+.stats-head p{color:var(--muted);font-size:.9rem;max-width:40ch}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media (max-width:900px){.stat-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.stat-grid{grid-template-columns:1fr}}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:22px;display:grid;gap:8px;align-content:start;min-width:0}
+.stat strong{font-family:var(--display);font-weight:300;font-size:clamp(2.1rem,4.4vw,3.2rem);line-height:1.05;color:var(--sky);font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+.stat strong .unit{font-size:.5em;font-weight:700;letter-spacing:0}
+.stat p{color:var(--blush);font-size:.95rem}
+.stat small{font-size:.7rem;font-weight:700;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+
+/* tiga bahan */
+.ingr{padding-block:16vh 8vh}
+.ingr>h2{font-size:clamp(2.2rem,5.6vw,4.2rem);max-width:18ch;margin-top:8px}
+.ingr .sub{color:var(--blush);max-width:52ch;margin-top:16px;font-size:1.05rem}
+.ing{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(20px,4vw,56px);align-items:center;margin-top:clamp(48px,10vh,110px)}
+.ing>*{min-width:0}
+.ing.flip .ing-art{order:2}
+@media (max-width:860px){.ing{grid-template-columns:1fr}.ing.flip .ing-art{order:0}}
+.ing-art{position:relative;aspect-ratio:5/4;border-radius:28px;overflow:hidden;background:#ece3d4}
+.ing-art canvas{width:100%;height:100%;display:block}
+.ing-no{position:absolute;left:20px;top:14px;font-weight:300;font-size:clamp(2.4rem,6vw,4rem);color:rgba(31,74,61,.35);line-height:1}
+.ing-copy{display:grid;gap:16px}
+.ing-copy h3{font-size:clamp(2rem,4.4vw,3.2rem);font-weight:300;line-height:1.05}
+.lead2{font-size:1.08rem;color:var(--blush)}
+.ben{list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:18px 22px;counter-reset:b}
+@media (max-width:560px){.ben{grid-template-columns:1fr}}
+.ben li{display:grid;gap:4px;padding-left:36px;position:relative;counter-increment:b}
+.ben li::before{content:counter(b,decimal-leading-zero);position:absolute;left:0;top:1px;font-weight:700;color:var(--lime);font-size:.95rem}
+.ben b{color:var(--cream);font-size:1rem}
+.ben span{color:var(--blush);font-size:.9rem}
+
+/* pasar dunia (gelap) */
+.world{background:var(--forest);color:#e9e4d8;padding-block:16vh 12vh}
+.world .eyebrow{color:var(--gold)}
+.world h2{font-size:clamp(2.2rem,5.6vw,4.2rem);color:#fff;margin-top:8px}
+.world-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+@media (max-width:760px){.world-grid{grid-template-columns:1fr}}
+.wcard{background:var(--forest2);border-radius:24px;padding:28px;display:grid;gap:10px;align-content:start;min-width:0}
+.wcard strong{font-weight:300;font-size:clamp(4rem,10vw,6.5rem);line-height:.9;color:var(--gold);font-variant-numeric:tabular-nums}
+.wcard h3{font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:#fff}
+.wcard p{color:#b9c2bb;font-size:.95rem}
+.wcard .eg{border-top:1px solid rgba(255,255,255,.12);padding-top:12px;color:#dfe6e0}
+.wcard .eg b{display:block;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.world-80{display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center;border-top:1px solid rgba(255,255,255,.14);margin-top:48px;padding-top:32px}
+.world-80>*{min-width:0}
+@media (max-width:640px){.world-80{grid-template-columns:1fr;gap:10px}}
+.world-80 strong{font-weight:300;font-size:clamp(4rem,12vw,7.5rem);line-height:.9;color:var(--gold)}
+.world-80 p{color:#dfe6e0;max-width:52ch}
+.world-note{margin-top:28px;background:rgba(255,255,255,.06);border-radius:16px;padding:14px 18px;font-size:.88rem;color:#b9c2bb}
+.sources{margin-top:22px;font-size:.84rem;color:#b9c2bb}
+.sources summary{cursor:pointer;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.sources ul{margin:12px 0 0;padding-left:18px;display:grid;gap:6px}
+.sources a{color:#e9e4d8;overflow-wrap:anywhere}
+
+.trade-cta{display:flex;flex-wrap:wrap;gap:10px;border-top:1px solid var(--line);padding-top:18px}
+.trade-cta .btn{padding:10px 16px;font-size:.88rem}
+.foot-lang a{color:var(--cream)}
+.year{background:linear-gradient(180deg,var(--lime),var(--sky));-webkit-background-clip:text;background-clip:text}
+.hoki-letters span{color:#efe9dd;-webkit-text-stroke:1px #d9cdb6}
+.hoki-letters span.on{text-shadow:0 0 60px rgba(201,164,108,.45)}
+.node{background:#f1ece2}
+.hero h1{font-size:clamp(2.6rem,min(11.5vw,15vh),9.8rem)}
+@media (max-height:760px){.steps li:not(.on){display:none}.scene-title h2{font-size:clamp(1.8rem,7vh,4rem)}}
+.stat strong.word{font-size:clamp(1.7rem,3.2vw,2.5rem);white-space:nowrap}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav" aria-label="Main" data-id-aria="Utama">
+  <div class="langbar" id="langbar" hidden>
+    <div class="wrap">
+      <p id="langMsg">Choose another language to view this site in your language.</p>
+      <select id="langSel" aria-label="Language"><option value="en">English</option><option value="id">Bahasa Indonesia</option></select>
+      <button type="button" class="btn btn-rose sm" id="langGo">Continue</button>
+      <button type="button" class="x" id="langX" aria-label="Close">✕</button>
+    </div>
+  </div>
+  <div class="wrap navrow">
+    <a class="logo" href="#top"><img src="img/logo-icon.png" alt="" width="30" height="30">WINROS</a>
+    <div class="nav-links">
+      <a href="#pohon" data-id="Dari pohon">Origin</a>
+      <a href="#bahan" data-id="Produk">Ingredients</a>
+      <a href="#grade">Grades</a>
+      <a href="#dunia" data-id="Pasar dunia">Worldwide</a>
+      <a href="#tentang" data-id="Tentang">About</a>
+      <a href="#kontak" data-id="Kontak">Contact</a>
+    </div>
+    <button class="lang-btn" id="langBtn" type="button" aria-label="Ganti ke Bahasa Indonesia" data-id-aria="Switch to English"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.6 2.8 3.9 6 3.9 9.5S14.6 18.7 12 21.5M12 2.5C9.4 5.3 8.1 8.5 8.1 12s1.3 6.7 3.9 9.5"/></svg><span id="langCur">EN</span></button>
+    <button class="cart-btn" id="openCart" type="button" aria-label="Open your order" data-id-aria="Buka daftar pesanan"><span data-id="Pesanan">Order</span> <b id="cartCount">0</b></button>
+  </div>
+</nav>
+
+<main id="top">
+  <section class="scene hero" data-scene="hero" aria-label="Opening" data-id-aria="Pembuka">
+    <div class="pin">
+      <canvas class="bg" id="cvHero" aria-hidden="true"></canvas>
+      <div class="hero-copy wrap" id="heroCopy">
+        <img class="brand-logo" src="img/logo.png" alt="PT Winros Sukses Indonesia">
+        <span class="eyebrow" data-id="Bahan botani Indonesia · sejak 2017">Indonesian botanical ingredients · since 2017</span>
+        <h1 data-id="Getah Kemenyan <b>yang harum.</b>">Fragrant <b>kemenyan resin.</b></h1>
+        <p class="lead" data-id="Bahan alam terbaik, dari Indonesia untuk dunia. Menyan Madu dalam 10 grade, Menyan Bakar (Gum Benjamin) dalam 11 varian, dan Gambir.">Nature's finest, from Indonesia to the world. Menyan Madu in 10 grades, Menyan Bakar (Gum Benjamin) in 11 variants, and Gambir.</p>
+        <div class="cta-row">
+          <a class="btn btn-rose" href="#bahan" data-id="Lihat bahan kami">Explore ingredients</a>
+          <a class="btn btn-ghost" href="#pohon" data-id="Lihat dari pohonnya">See it from the tree</a>
+        </div>
+      </div>
+      <div class="scroll-hint" aria-hidden="true" data-id="Gulir ke bawah">Scroll down</div>
+    </div>
+  </section>
+
+  <section class="stats wrap" aria-label="Indonesia at a glance" data-id-aria="Indonesia dalam angka">
+    <div class="stats-head">
+      <div><span class="eyebrow" data-id="Indonesia dalam angka">Indonesia at a glance</span><h2 data-id="Bukan sekadar komoditas. <b>Ini cerita tentang nilai.</b>">Not just a commodity. <b>A story of value.</b></h2></div>
+      <p data-id="Angka di bawah adalah angka kemenyan dan gambir Indonesia secara umum, bukan angka penjualan Winros.">The figures below describe Indonesian benzoin and gambier as a whole, not Winros sales.</p>
+    </div>
+    <div class="stat-grid">
+      <div class="stat"><strong><span class="num" data-n="60" data-pre="±">±60</span> <span class="unit" data-id="negara">countries</span></strong><p data-id="Kemenyan Indonesia diekspor ke sekitar 60 negara.">Indonesian benzoin is exported to around 60 countries.</p><small data-id="Sumber: BRIN">Source: BRIN</small></div>
+      <div class="stat"><strong><span class="num" data-n="80" data-suf="%">80%</span></strong><p data-id="Pasokan gambir dunia berasal dari Indonesia.">of the world's gambier supply comes from Indonesia.</p><small data-id="Sumber: Kementan">Source: Ministry of Agriculture</small></div>
+      <div class="stat"><strong class="word" data-id="Satu-satunya">Only here</strong><p data-id="Sumatra benzoin hanya dihasilkan di Indonesia.">Sumatra benzoin is produced only in Indonesia.</p><small data-id="Sumatera Utara">North Sumatra</small></div>
+      <div class="stat"><strong><span class="num" data-n="50" data-suf="%">50%</span></strong><p data-id="Separuh kebutuhan gambir India dipasok Indonesia.">of India's gambier needs are supplied by Indonesia.</p><small data-id="Sumber: Kemenkop UKM">Source: Ministry of Cooperatives &amp; SMEs</small></div>
+    </div>
+  </section>
+
+  <section class="reveal wrap" aria-label="Story" data-id-aria="Cerita">
+    <p class="big-words" data-reveal data-id="Setiap butir kemenyan berawal dari satu goresan di kulit pohon. Getahnya menetes putih susu, mengeras di batang, lalu dipetik satu per satu oleh petani lokal. Yang tersisa adalah aroma manis balsamik yang sudah dibakar orang selama berabad-abad.">Every grain of kemenyan begins with a single cut in the bark. The resin seeps out milky white, hardens on the trunk, then is picked one by one by local farmers. What remains is a sweet, balsamic aroma that people have burned for centuries.</p>
+  </section>
+
+  <section class="scene tree" id="pohon" data-scene="tree" aria-label="From tree to grain" data-id-aria="Dari pohon ke butir">
+    <div class="pin">
+      <canvas class="bg" id="cvTree" aria-hidden="true"></canvas>
+      <div class="scene-title"><div class="wrap"><span class="eyebrow" data-id="Asal-usul">Origin</span><h2 data-id="Begini getahnya <b>lahir.</b>">How the resin <b>is born.</b></h2></div></div>
+      <div class="steps"><div class="wrap">
+        <ol id="treeSteps">
+          <li class="on"><span>01</span><strong data-id="Pohon Styrax">The Styrax tree</strong><p data-id="Pohon kemenyan tumbuh di hutan dataran tinggi Sumatra.">Benzoin trees grow in the highland forests of Sumatra.</p></li>
+          <li><span>02</span><strong data-id="Disadap">Tapped</strong><p data-id="Petani lokal menakik kulit batang kecil-kecil dengan pisau sadap.">A local farmer cuts small notches in the bark with a tapping knife.</p></li>
+          <li><span>03</span><strong data-id="Getah meleleh">The resin flows</strong><p data-id="Dari luka takikan keluar getah putih susu yang kental dan lengket.">Thick, sticky, milky-white resin seeps from every notch.</p></li>
+          <li><span>04</span><strong data-id="Mengeras di batang">It hardens on the trunk</strong><p data-id="Getah dibiarkan menempel di batang berminggu-minggu sampai mengeras menjadi butiran.">The resin stays on the trunk for weeks until it sets into tears.</p></li>
+          <li><span>05</span><strong data-id="Dipetik petani lokal">Picked by local farmers</strong><p data-id="Petani memetik butiran yang sudah keras satu per satu ke dalam keranjang.">Farmers pick the hardened tears one by one into a basket.</p></li>
+          <li><span>06</span><strong data-id="Disortir menjadi grade">Sorted into grades</strong><p data-id="Hasil panen dipilah dengan tangan menurut ukuran dan warna.">Every harvest is sorted by hand by size and colour.</p></li>
+        </ol>
+      </div></div>
+    </div>
+  </section>
+
+  <section class="scene macro" data-scene="macro" aria-label="Close-up" data-id-aria="Diperbesar">
+    <div class="pin">
+      <canvas class="bg" id="cvMacro" aria-hidden="true"></canvas>
+      <div class="zoom-read wrap">
+        <h2 data-id="Masuk ke dalam <b>satu tampah.</b>">Inside <b>one tray.</b></h2>
+        <div class="mag"><span id="magVal">1.0</span>×<small>Big Grade</small></div>
+      </div>
+      <div class="macro-notes"><div class="wrap"><p id="macroNote"></p></div></div>
+    </div>
+  </section>
+
+  <section class="scene products" id="produk" data-scene="products" aria-label="Products" data-id-aria="Produk">
+    <div class="pin">
+      <canvas class="bg" id="cvProd" aria-hidden="true"></canvas>
+      <div class="prod-panel"><div class="wrap" style="position:relative">
+        <div class="prod-copy madu" id="copyA">
+          <span class="eyebrow">01 · Gum Benzoin</span>
+          <h2>Menyan Madu</h2>
+          <p class="desc" data-id="Butiran getah kemenyan alami yang hangat, manis, dan balsamik. Dipilah menjadi 10 grade, dari bongkahan Big sampai bubuk Abu.">Natural benzoin tears with a warm, sweet, balsamic character. Sorted into 10 grades, from Big chunks to fine Ash powder.</p>
+          <dl class="spec">
+            <dt data-id="Wujud">Form</dt><dd data-id="Butir dan bongkah getah alami">Natural tears and chunks</dd>
+            <dt>Grade</dt><dd>Big, Mata, Cabutan L, Juru Cabutan, Kacang, Jagung, Aragan, Bibit, Pasir, Abu</dd>
+            <dt data-id="Aroma">Aroma</dt><dd data-id="Manis, balsamik, mirip vanila">Sweet, balsamic, vanilla-like</dd>
+          </dl>
+        </div>
+        <div class="prod-copy bakar" id="copyB" style="position:absolute;top:0;left:max(16px,env(safe-area-inset-left,0px));right:max(16px,env(safe-area-inset-right,0px));opacity:0;visibility:hidden">
+          <span class="eyebrow">02 · Gum Benjamin</span>
+          <h2>Menyan Bakar</h2>
+          <p class="desc" data-id="Kemenyan yang dicetak menjadi blok padat beraneka warna, praktis dipotong dan dibakar di atas bara.">Benzoin pressed into solid, colourful blocks that are easy to cut and burn on charcoal.</p>
+          <dl class="spec">
+            <dt data-id="Wujud">Form</dt><dd data-id="Blok cetak">Moulded block</dd>
+            <dt data-id="Varian">Variants</dt><dd>Yellow, White, AAA, Black, Red, Brick, Green, MA, 789, ANT, MP</dd>
+            <dt data-id="Aroma">Aroma</dt><dd data-id="Resin hangat yang khas saat dibakar">Warm, distinctive resin scent when heated</dd>
+          </dl>
+        </div>
+      </div></div>
+      <div class="prod-switch"><div class="wrap"><div class="dots" aria-hidden="true"><span id="dotA" class="on">Menyan Madu</span><span id="dotB">Menyan Bakar</span></div></div></div>
+    </div>
+  </section>
+
+  <section class="scene grades" id="grade" data-scene="grades" aria-label="Grades" data-id-aria="Grade">
+    <div class="pin">
+      <div class="wrap grades-head">
+        <div><span class="eyebrow" data-id="21 pilihan">21 choices</span><h2 data-id="Perbesar <b>tiap grade.</b>">Zoom into <b>every grade.</b></h2></div>
+        <p data-id="Arahkan kursor atau ketuk foto untuk memindahkan kaca pembesar dan melihat butirnya dari dekat.">Hover over or tap a photo to move the magnifier and see the grains up close.</p>
+      </div>
+      <div class="track" id="track"></div>
+    </div>
+  </section>
+
+  <section class="ingr wrap" id="bahan" aria-label="The three ingredients" data-id-aria="Tiga bahan">
+    <span class="eyebrow" data-id="Tiga bahan">The three ingredients</span>
+    <h2 data-id="Bahan alam pilihan. <b>Peluang global.</b>">Natural ingredients. <b>Global possibilities.</b></h2>
+    <p class="sub" data-id="Bahan alam pilihan dari Indonesia untuk wewangian, dupa, penyamakan kulit, dan inovasi botani.">Selected natural ingredients from Indonesia for fragrance, incense, leather tanning and botanical innovation.</p>
+
+    <article class="ing" id="ingMadu">
+      <div class="ing-art"><canvas id="cvIngA" aria-hidden="true"></canvas><span class="ing-no">01</span></div>
+      <div class="ing-copy">
+        <span class="eyebrow">Menyan Madu · Gum Benzoin</span>
+        <h3 data-id="Sisi manis <b>dari alam.</b>">The sweet side <b>of nature.</b></h3>
+        <p class="lead2" data-id="Hangat, manis, dan balsamik: karakter aromatik alami untuk inspirasi wewangian.">A naturally warm, balsamic aroma with a distinctive sweet character.</p>
+        <ol class="ben">
+          <li><b data-id="Profil aroma">Aroma profile</b><span data-id="Manis dan balsamik, mirip vanila, tergantung jenis dan grade.">Sweet and balsamic, vanilla-like, depending on species and grade.</span></li>
+          <li><b data-id="Bahan pewangi">Fragrance material</b><span data-id="Dipakai dalam parfum sebagai fiksatif (pengikat aroma). Peneliti BRIN menemukan parfum impor bernilai tinggi memakai kemenyan Indonesia.">Used in perfumery as a fixative. BRIN researchers found high-value imported perfumes using Indonesian benzoin.</span></li>
+          <li><b data-id="Kandungan khas">Distinctive chemistry</b><span data-id="Jenis Sumatra mengandung asam sinamat di samping asam benzoat; jenis Siam tidak.">Sumatra benzoin contains cinnamic acid as well as benzoic acid; Siam benzoin does not.</span></li>
+          <li><b data-id="Diakui pasar dunia">Recognised worldwide</b><span data-id="Diekspor 5.000–6.000 ton per tahun ke sekitar 60 negara; Prancis dan Spanyol termasuk pembelinya.">Exported at 5,000–6,000 tonnes a year to around 60 countries; France and Spain are among the buyers.</span></li>
+        </ol>
+        <div class="cta-row"><button class="btn btn-rose" type="button" data-order="madu" data-id="Pesan Menyan Madu">Order Menyan Madu</button><a class="btn btn-ghost" data-wa="sample" data-prod="Menyan Madu" href="#kontak" data-id="Minta sampel">Request a sample</a></div>
+      </div>
+    </article>
+
+    <article class="ing flip" id="ingBakar">
+      <div class="ing-art"><canvas id="cvIngB" aria-hidden="true"></canvas><span class="ing-no">02</span></div>
+      <div class="ing-copy">
+        <span class="eyebrow">Menyan Bakar · Gum Benjamin</span>
+        <h3 data-id="Warisan kuno. <b>Wangi abadi.</b>">Ancient heritage. <b>Timeless fragrance.</b></h3>
+        <p class="lead2" data-id="Resin aromatik Indonesia untuk dupa dan bahan wewangian, dihargai lintas generasi.">A natural aromatic resin, treasured across generations, for incense and fragrance.</p>
+        <ol class="ben">
+          <li><b data-id="Dupa lintas budaya">Incense across cultures</b><span data-id="Komponen utama dupa gereja Ortodoks dan Katolik; dibakar di atas arang di Jazirah Arab dan di kuil Hindu di India.">A main component of Orthodox and Catholic church incense; burned on charcoal across the Arabian Peninsula and in Hindu temples in India.</span></li>
+          <li><b data-id="Bahan bakhoor">Bakhoor ingredient</b><span data-id="Diolah menjadi bakhoor dan dupa campuran di negara-negara Arab dan Tanduk Afrika.">Made into bakhoor and blended incense in Arab countries and the Horn of Africa.</span></li>
+          <li><b data-id="Diminati Timur Tengah">Sought after in the Middle East</b><span data-id="Kemendag mencatat kemenyan sebagai produk Indonesia yang diminati di pameran dagang Arab Saudi.">Indonesia's Ministry of Trade lists benzoin among Indonesian products in demand at trade fairs in Saudi Arabia.</span></li>
+          <li><b data-id="Lebih dari dupa">More than incense</b><span data-id="Juga dipakai sebagai bahan baku industri perawatan kulit dan farmasi, antara lain pembentuk lapisan film dan penutup rasa.">Also used as a raw material by the skincare and pharmaceutical industries, for example as a film former and taste masker.</span></li>
+        </ol>
+        <div class="cta-row"><button class="btn btn-rose" type="button" data-order="bakar" data-id="Pesan Menyan Bakar">Order Menyan Bakar</button><a class="btn btn-ghost" data-wa="sample" data-prod="Menyan Bakar (Gum Benjamin)" href="#kontak" data-id="Minta sampel">Request a sample</a></div>
+      </div>
+    </article>
+
+    <article class="ing" id="ingGambir">
+      <div class="ing-art"><canvas id="cvIngC" aria-hidden="true"></canvas><span class="ing-no">03</span></div>
+      <div class="ing-copy">
+        <span class="eyebrow">Gambir · Uncaria gambir</span>
+        <h3 data-id="Kekuatan botani. <b>Potensi industri.</b>">Botanical power. <b>Industrial potential.</b></h3>
+        <p class="lead2" data-id="Tanin dan katekin nabati, berakar di Indonesia. 80% gambir dunia berasal dari sini.">Plant-derived tannins and catechins, rooted in Indonesia. 80% of the world's gambier comes from here.</p>
+        <ol class="ben">
+          <li><b data-id="Tanin nabati">Vegetable tannin</b><span data-id="Bahan penyamakan kulit berbasis tumbuhan.">A plant-based material for leather tanning.</span></li>
+          <li><b data-id="Kaya katekin">Rich in catechin</b><span data-id="Getah gambir Sumatera Utara tercatat berkadar katekin 70–85%. Kadar barang aktual mengikuti hasil uji lab.">Gambier from North Sumatra is recorded at 70–85% catechin. Actual content follows lab testing.</span></li>
+          <li><b data-id="Satu bahan, banyak industri">One ingredient, many industries</b><span data-id="Katekin dibutuhkan industri farmasi, kosmetik, batik, dan cat; gambir juga dipakai sebagai pewarna.">Catechin is used by the pharmaceutical, cosmetics, batik and paint industries; gambier is also used as a dye.</span></li>
+          <li><b data-id="Permintaan stabil">Steady demand</b><span data-id="Pembeli terbesar India (13–14 ribu ton per tahun), lalu Jepang, Tiongkok, Pakistan, Bangladesh, dan sebagian Eropa.">India is the largest buyer (13–14 thousand tonnes a year), followed by Japan, China, Pakistan, Bangladesh and parts of Europe.</span></li>
+        </ol>
+        <div class="cta-row"><a class="btn btn-rose" data-wa="quote" data-prod="Gambir" href="#kontak" data-id="Minta penawaran">Request a quotation</a><a class="btn btn-ghost" data-wa="sample" data-prod="Gambir" href="#kontak" data-id="Minta sampel">Request a sample</a></div>
+      </div>
+    </article>
+  </section>
+
+  <section class="world" id="dunia" aria-label="Worldwide relevance" data-id-aria="Pasar dunia">
+    <div class="wrap">
+      <span class="eyebrow" data-id="Kehadiran internasional">International presence</span>
+      <h2 data-id="Indonesia memasok. <b>Dunia berkarya.</b>">Indonesia supplies. <b>The world creates.</b></h2>
+      <div class="world-grid">
+        <div class="wcard"><strong class="num" data-n="24">24</strong><h3 data-id="Pasar gum benzoin">Gum benzoin markets</h3><p data-id="Tercatat dalam data pengiriman ekspor Indonesia, Mar 2022 – Jun 2025.">Recorded in Indonesian export shipment data, Mar 2022 – Jun 2025.</p><p class="eg"><b>Benzoin</b> <span data-id="India · Prancis · Uni Emirat Arab · Jerman · dan negara tujuan lain.">India · France · United Arab Emirates · Germany · and other destinations.</span></p></div>
+        <div class="wcard"><strong class="num" data-n="15">15</strong><h3 data-id="Pasar gambir">Gambier markets</h3><p data-id="Tercatat dalam data pengiriman ekspor Indonesia, Jan 2022 – Jun 2025.">Recorded in Indonesian export shipment data, Jan 2022 – Jun 2025.</p><p class="eg"><b>Gambir</b> <span data-id="India · Pakistan · Bangladesh · Jepang · Tiongkok · Amerika Serikat dan pasar lain.">India · Pakistan · Bangladesh · Japan · China · United States and other markets.</span></p></div>
+      </div>
+      <div class="world-80"><strong><span class="num" data-n="80" data-pre="~" data-suf="%">~80%</span></strong><p data-id="Pasokan gambir dunia berasal dari Indonesia menurut publikasi pemerintah (2021) dan BRMP (2025). Ini estimasi tingkat komoditas, bukan penjualan satu perusahaan.">of the world's gambier supply comes from Indonesia, according to government publications (2021) and BRMP (2025). This is a commodity-level estimate, not one company's sales.</p></div>
+      <p class="world-note" data-id="Negara tujuan perdagangan tidak sama dengan negara pengguna akhir atau pelanggan Winros.">Trade destination countries are not the same as end-user countries or Winros customers.</p>
+      <details class="sources">
+        <summary data-id="Sumber">Sources</summary>
+        <ul>
+          <li><a href="https://www.fao.org/4/AC776E/ac776e08.htm" target="_blank" rel="noopener">FAO – Benzoin terminology and types</a></li>
+          <li><a href="https://www.fao.org/4/ac776e/ac776e0c.htm" target="_blank" rel="noopener">FAO – Uses of benzoin</a></li>
+          <li><a href="https://www.volza.com/p/gum-benzoin/hsn-code-13019090/export-data/exports-from-indonesia/" target="_blank" rel="noopener">Volza – Gum benzoin exports from Indonesia</a></li>
+          <li><a href="https://www.volza.com/p/gambier/export-data/exports-from-indonesia/" target="_blank" rel="noopener">Volza – Gambier exports from Indonesia</a></li>
+          <li><a href="https://www.ekon.go.id/publikasi/detail/3116/komoditas-gambir-indonesia-unggul-di-mancanegara" target="_blank" rel="noopener">Kemenko Perekonomian – Gambir (2021)</a></li>
+          <li><a href="https://perkebunan.bsip.pertanian.go.id/berita/membawa-gambir-ke-pasar-global" target="_blank" rel="noopener">Kementan – Gambir in the global market</a></li>
+          <li><a href="https://industri.kontan.co.id/news/indonesia-kuasai-80-pasar-gambir-dunia-ini-daftar-negara-yang-jadi-tujuan" target="_blank" rel="noopener">Kontan – Indonesia holds 80% of the gambier market</a></li>
+          <li><a href="https://epublikasi.pertanian.go.id/berkala/wartabun/article/download/3869/3812/6859" target="_blank" rel="noopener">Warta Perkebunan – Gambier catechin content</a></li>
+          <li><a href="https://infobanknews.com/brin-ungkap-parfum-mewah-impor-gunakan-kemenyan-asal-indonesia" target="_blank" rel="noopener">Infobank – BRIN: luxury perfumes use Indonesian benzoin</a></li>
+          <li><a href="https://ekonomi.bisnis.com/read/20191228/12/1185211/kemenyan-asal-indonesia-laris-di-arab-saudi" target="_blank" rel="noopener">Bisnis.com – Indonesian benzoin in demand in Saudi Arabia</a></li>
+          <li><a href="https://www.afsuter.com/product/benzoin-resin/" target="_blank" rel="noopener">A.F. Suter – Benzoin, gum Benjamin</a></li>
+          <li><a href="https://premierepeau.com/uk/pages/glossary-terms/benzoin" target="_blank" rel="noopener">Première Peau – Benzoin in perfumery</a></li>
+          <li><a href="https://kumparan.com/deo-peter/kemenyan-harta-terpendam-sumatera-utara-25THovSFoow" target="_blank" rel="noopener">Kumparan – Kemenyan, North Sumatra's hidden treasure</a></li>
+        </ul>
+      </details>
+    </div>
+  </section>
+
+  <section class="scene since" id="tentang" data-scene="since" aria-label="About Winros" data-id-aria="Tentang Winros">
+    <div class="pin"><div class="wrap since-grid">
+      <div><div class="year" id="yearVal">2017</div><div class="year-sub" id="yearSub"></div></div>
+      <div class="since-copy">
+        <span class="eyebrow" data-id="Sejarah perusahaan">Company history</span>
+        <h2 data-id="Distribusi hasil <b>pertanian dan perkebunan.</b>">Distributing agricultural <b>and plantation products.</b></h2>
+        <p data-id="PT Winros Sukses Indonesia didirikan pada April 2017 dan bergerak di bidang pertanian dan perkebunan. Bisnisnya tumbuh lewat berbagai langkah terobosan. Dengan menjaga kualitas barang yang diperdagangkan, Winros terus berkembang memenuhi kebutuhan konsumen.">PT Winros Sukses Indonesia was founded in April 2017 and works in agriculture and plantations. The business has grown through a series of breakthroughs. By keeping the quality of every product it trades, Winros keeps growing to meet its customers' needs.</p>
+        <div class="facts">
+          <div><strong>10</strong><span data-id="grade Menyan Madu">grades of Menyan Madu</span></div>
+          <div><strong>11</strong><span data-id="varian Menyan Bakar">variants of Menyan Bakar</span></div>
+          <div><strong>3</strong><span data-id="komoditas botani">botanical commodities</span></div>
+        </div>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="scene hoki" data-scene="hoki" aria-label="Company culture" data-id-aria="Budaya perusahaan">
+    <div class="pin"><div class="wrap" style="display:grid;gap:4vh">
+      <span class="eyebrow" data-id="Budaya perusahaan">Company culture</span>
+      <div class="hoki-letters" aria-hidden="true"><span>H</span><span>O</span><span>K</span><span>I</span></div>
+      <div class="hoki-card" id="hokiCard" aria-live="polite"></div>
+    </div></div>
+  </section>
+
+  <section class="leader wrap" aria-label="A word from our leader" data-id-aria="Sambutan pimpinan">
+    <span class="eyebrow" data-id="Sambutan dari pimpinan">A word from our leader</span>
+    <p class="big-words" data-reveal data-id="Kami terus berusaha menjadikan Winros pilihan utama dan terbaik dalam pelayanan distribusi, dan mengembangkan jangkauan kami ke semua pelanggan. Terima kasih kepada para pelanggan yang terus setia. Kami bangga turut menggerakkan dinamika bangsa Indonesia.">We keep working to make Winros the first and best choice in distribution, and to extend our reach to every customer. Thank you to all our loyal customers. We are proud to help move Indonesia forward.</p>
+    <div class="quote-by"><div class="av" aria-hidden="true">DM</div><div><strong>Diana Mulya</strong><span>CEO PT Winros Sukses Indonesia</span></div></div>
+  </section>
+
+  <section class="wrap vm" id="vm" aria-label="Vision and mission" data-id-aria="Visi dan misi">
+    <article class="off-l"><span class="eyebrow" data-id="Vision">Visi</span><h3 data-id="Visi">Vision</h3><p data-id="Menjadi perusahaan distribusi pertanian dan perkebunan terbaik dan terunggul di Indonesia serta mancanegara dalam jasa distribusi.">To be the best and leading agricultural and plantation distribution company in Indonesia and abroad.</p></article>
+    <article class="off-r"><span class="eyebrow" data-id="Mission">Misi</span><h3 data-id="Misi">Mission</h3><p data-id="Memberikan pelayanan jasa distribusi pertanian dan perkebunan dengan kualitas terbaik, aman, nyaman, tepat waktu, dan memuaskan pelanggan.">To deliver agricultural and plantation distribution services of the highest quality: safe, comfortable, on time and satisfying for our customers.</p></article>
+  </section>
+
+  <section class="proc wrap" aria-label="How to order" data-id-aria="Prosedur pemesanan">
+    <span class="eyebrow" data-id="Prosedur">Procedure</span>
+    <h2 data-id="Cara memesan <b>di Winros.</b>">How to order <b>from Winros.</b></h2>
+    <div class="proc-flow">
+      <div class="pstep"><span class="n">1</span><h3>Customer</h3><p data-id="Hubungi bagian sales lewat telepon, WhatsApp, atau formulir pesanan di halaman ini untuk mengajukan order barang.">Contact our sales team by phone, WhatsApp or the order form on this page to place an order.</p></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="pstep"><span class="n">2</span><h3>Sales</h3><ul>
+        <li data-id="<strong>Kerja sama berkelanjutan:</strong> sales mengajukan kontrak yang ditandatangani CEO atau pejabat yang ditunjuk lewat SK, berisi aturan kedua pihak dan kebijakan harga."><strong>Ongoing partnership:</strong> sales prepares a contract signed by the CEO or an official appointed by decree, setting out both parties' terms and the pricing policy.</li>
+        <li data-id="<strong>Sekali transaksi:</strong> sales menghubungi customer, memberikan rincian biaya, lalu membicarakan peluang kerja sama berikutnya."><strong>One-off purchase:</strong> sales contacts the customer with a cost breakdown, then discusses future cooperation.</li>
+      </ul></div>
+    </div>
+  </section>
+
+  <section class="org wrap" aria-label="Organisation" data-id-aria="Struktur organisasi">
+    <span class="eyebrow" data-id="Struktur organisasi">Organisation</span>
+    <h2 data-id="Tim di balik <b>setiap pengiriman.</b>">The team behind <b>every shipment.</b></h2>
+    <div class="org-chart" id="org">
+      <div class="org-row"><div class="node top">CEO</div><div class="node">Internal Audit</div></div>
+      <div class="org-row"><div class="node">Finance</div><div class="node mid">Manager</div><div class="node">HRD &amp; GA</div></div>
+      <div class="org-row"><div class="node">Operational</div><div class="node">Sales</div></div>
+      <div class="org-row"><div class="node">Driver</div></div>
+    </div>
+  </section>
+
+  <section class="shop" id="belanja" aria-label="For industry and trade" data-id-aria="Untuk industri dan perdagangan">
+    <div class="wrap">
+      <span class="eyebrow" data-id="Untuk industri &amp; perdagangan">For industry &amp; trade</span>
+      <div class="shop-grid">
+        <div class="preview"><canvas id="cvShop" aria-label="Close-up of the selected grade" data-id-aria="Foto dekat grade terpilih"></canvas><span class="badge" id="shopBadge">Preview</span></div>
+        <div class="config">
+          <h2 data-id="Pilih <b>kemenyanmu.</b>">Choose <b>your kemenyan.</b></h2>
+          <div><span class="field-label" id="lblProd" data-id="Produk">Product</span><div class="chips" id="chipProd" role="group" aria-labelledby="lblProd"></div></div>
+          <div><span class="field-label" id="lblGrade" data-id="Grade / varian">Grade / variant</span><div class="chips" id="chipGrade" role="group" aria-labelledby="lblGrade"></div></div>
+          <div><span class="field-label" id="lblQ" data-id="Jumlah">Quantity</span>
+            <div class="qty" role="group" aria-labelledby="lblQ"><button type="button" id="qMinus" aria-label="Decrease" data-id-aria="Kurangi">−</button><output id="qVal">10 kg</output><button type="button" id="qPlus" aria-label="Increase" data-id-aria="Tambah">+</button></div>
+          </div>
+          <p class="note" data-id="Harga mengikuti jumlah dan tujuan pengiriman. Sales Winros mengirimkan penawaran setelah pesanan diterima.">Prices depend on quantity and destination. Winros sales will send a quotation once your order is received.</p>
+          <div class="total-row">
+            <span class="note" id="cfgSum"></span>
+            <button class="btn btn-rose" type="button" id="addCart" data-id="Tambah ke pesanan">Add to order</button>
+          </div>
+          <div class="trade-cta">
+            <a class="btn btn-ghost" data-wa="sample" href="#kontak" data-id="Minta sampel">Request a sample</a>
+            <a class="btn btn-ghost" data-wa="quote" href="#kontak" data-id="Minta penawaran">Request a quotation</a>
+            <a class="btn btn-ghost" data-wa="spec" href="#kontak" data-id="Minta spesifikasi">Request specifications</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact wrap" id="kontak" aria-label="Contact" data-id-aria="Kontak">
+    <span class="eyebrow" data-id="Lokasi &amp; kontak">Location &amp; contact</span>
+    <h2 data-id="Mampir atau <b>hubungi sales.</b>">Visit us or <b>contact sales.</b></h2>
+    <div class="contact-grid">
+      <div class="cblock">
+        <div class="cline"><b data-id="Alamat">Address</b><span>Jl Kamal Raya Outer Ring Road, Komplek Rukan Malibu City Resort, I, 11, Cengkareng Timur, Cengkareng, Kota Adm. Jakarta Barat, DKI Jakarta 11730, Indonesia</span></div>
+        <div class="cline"><b data-id="Narahubung">Contact</b><span>Umi Tsalitsa · +62 812 9494 4200</span></div>
+        <div class="cline"><b data-id="Telepon">Phone</b><span>+62 21 5835218</span></div>
+        <div class="cline"><b data-id="Ponsel">Mobile</b><span>+62 812 9494 4200 · +62 812 1494 200 · +62 851 3030 4200</span></div>
+        <div class="cline"><b>WhatsApp</b><span>+62 851 2108 8865</span></div>
+        <div class="cline"><b>Email</b><span>winros@svarnadipa.net</span></div>
+        <div class="cta-row"><a class="btn btn-rose" data-wa="chat" href="#kontak" data-id="Chat lewat WhatsApp">Chat on WhatsApp</a></div>
+      </div>
+      <div style="display:grid;gap:16px;min-width:0"><img class="brand-logo" src="img/logo.png" alt="PT Winros Sukses Indonesia" style="width:min(240px,60%)"><div class="mapcard"><canvas id="cvMap" aria-label="Winros location in West Jakarta" data-id-aria="Lokasi Winros di Jakarta Barat"></canvas></div></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div style="display:flex;gap:14px;align-items:center"><img src="img/logo-icon.png" alt="" width="40" height="40" style="height:40px;width:auto"><div><strong>PT Winros Sukses Indonesia</strong><br>Menyan Madu (Gum Benzoin) · Menyan Bakar (Gum Benjamin) · Gambir</div></div>
+  <div class="foot-lang"><span data-id="Bahasa:">Language:</span> <a href="?lang=en" data-setlang="en">English</a> · <a href="?lang=id" data-setlang="id">Bahasa Indonesia</a></div>
+  <div>© 2026 PT Winros Sukses Indonesia · <span data-id="Jakarta Barat">West Jakarta</span></div>
+</div></footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Your order" data-id-aria="Daftar pesanan" aria-hidden="true">
+  <header><h2 data-id="Daftar pesanan">Your order</h2><button class="x" type="button" id="closeCart" aria-label="Close" data-id-aria="Tutup">✕</button></header>
+  <div class="items" id="items"></div>
+  <footer>
+    <div class="sum"><span data-id="Total berat">Total weight</span><span id="subtotal">0 kg</span></div>
+    <button class="btn btn-rose btn-block" type="button" id="toCheckout" data-id="Lanjut ke checkout">Continue to checkout</button>
+  </footer>
+</aside>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="coTitle" aria-hidden="true">
+  <div class="sheet">
+    <div class="sheet-top"><h2 id="coTitle">Checkout</h2><button class="x" type="button" id="closeCo" aria-label="Close checkout" data-id-aria="Tutup checkout">✕</button></div>
+    <div class="progress" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+    <form id="coForm" novalidate>
+      <div id="step1" class="form">
+        <label><span data-id="Nama">Name</span><input id="fNama" autocomplete="name" required></label>
+        <label><span data-id="Perusahaan (opsional)">Company (optional)</span><input id="fPt" autocomplete="organization"></label>
+        <label><span data-id="Nomor WhatsApp">WhatsApp number</span><input id="fWa" inputmode="tel" autocomplete="tel" placeholder="+62 812 3456 7890" required></label>
+        <label><span data-id="Kota / negara">City / country</span><input id="fKota" autocomplete="address-level2" required></label>
+        <label class="full"><span data-id="Alamat pengiriman">Delivery address</span><textarea id="fAlamat" rows="3" autocomplete="street-address" required></textarea></label>
+        <label class="full"><span data-id="Catatan (opsional)">Notes (optional)</span><input id="fNote" placeholder="e.g. delivery schedule, packaging" data-id-ph="mis. jadwal kirim, kemasan"></label>
+        <p class="errmsg full" id="err1" role="alert"></p>
+      </div>
+      <div id="step2" hidden>
+        <div class="opts" style="margin-bottom:16px">
+          <span class="field-label" data-id="Jenis transaksi">Transaction type</span>
+          <label class="opt"><span><input type="radio" name="tipe" checked> <i data-id="Sekali transaksi">One-off purchase</i></span><small data-id="sales kirim rincian biaya">sales sends a cost breakdown</small></label>
+          <label class="opt"><span><input type="radio" name="tipe"> <i data-id="Kerja sama berkelanjutan">Ongoing partnership</i></span><small data-id="dengan kontrak &amp; kebijakan harga">with contract &amp; pricing policy</small></label>
+        </div>
+        <div class="opts">
+          <span class="field-label" data-id="Pengiriman">Delivery</span>
+          <label class="opt"><span><input type="radio" name="kirim" checked> <i data-id="Dalam negeri">Within Indonesia</i></span><small data-id="ekspedisi">courier</small></label>
+          <label class="opt"><span><input type="radio" name="kirim"> <i data-id="Ekspor ke luar negeri">Export overseas</i></span><small data-id="dokumen ekspor">export documents</small></label>
+          <label class="opt"><span><input type="radio" name="kirim"> <i data-id="Ambil sendiri">Self pick-up</i></span><small data-id="Cengkareng, Jakarta Barat">Cengkareng, West Jakarta</small></label>
+        </div>
+      </div>
+      <div id="step3" hidden><div class="recap" id="recap"></div></div>
+      <div id="step4" hidden>
+        <div class="done">
+          <div class="seal">✓</div>
+          <h3 style="font-size:1.5rem" data-id="Pesanan siap dikirim ke sales">Your order is ready to send to sales</h3>
+          <p><span data-id="Kode pesanan">Order code</span> <code id="orderCode"></code></p>
+          <p class="note" data-id="Tekan &quot;Kirim lewat WhatsApp&quot;, atau salin ringkasan lalu kirim ke +62 851 2108 8865. Pesanan diproses setelah pesannya diterima sales Winros.">Tap "Send via WhatsApp", or copy the summary and send it to +62 851 2108 8865. Your order is processed once Winros sales receives the message.</p>
+          <pre id="orderText"></pre>
+          <div class="cta-row" style="justify-content:center">
+            <a class="btn btn-rose" id="waLink" href="#" target="_blank" rel="noopener" data-id="Kirim lewat WhatsApp">Send via WhatsApp</a>
+            <button class="btn btn-ghost" type="button" id="copyOrder" data-id="Salin ringkasan">Copy summary</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="sheet-actions">
+      <button class="btn btn-ghost" type="button" id="coBack" data-id="Kembali">Back</button>
+      <button class="btn btn-rose" type="button" id="coNext">Next</button>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/* ===== Bahasa (EN bawaan, ID lewat tombol / ?lang=id) ===== */
+const LANGS=['en','id'];
+function pickLang(){let q=null;try{q=new URLSearchParams(location.search).get('lang')}catch(e){}if(LANGS.includes(q))return q;
+  try{const s=localStorage.getItem('winros-lang');if(LANGS.includes(s))return s}catch(e){}return 'en'}
+const LANG=pickLang();const isID=LANG==='id';
+const L=(en,id)=>isID?id:en;
+const fmt1=v=>isID?v.toFixed(1).replace('.',','):v.toFixed(1);
+document.documentElement.lang=LANG;
+if(isID){
+  document.querySelectorAll('[data-id]').forEach(el=>{el.innerHTML=el.dataset.id});
+  document.querySelectorAll('[data-id-aria]').forEach(el=>el.setAttribute('aria-label',el.dataset.idAria));
+  document.querySelectorAll('[data-id-ph]').forEach(el=>el.setAttribute('placeholder',el.dataset.idPh));
+  document.title='Winros · Kemenyan & Gambir Indonesia';
+}
+document.getElementById('langCur').textContent=isID?'ID':'EN';
+function setLang(l){try{localStorage.setItem('winros-lang',l)}catch(e){}
+  const u=new URL(location.href);u.searchParams.set('lang',l);location.href=u.toString()}
+
+/* ===== Data (dari winrosindonesia.com, company profile, dan 2 PDF Kak Intan 17 Nov 2026) ===== */
+const WA_ADMIN='6285121088865';
+/* 17 Nov 2026: Kak Intan - nama produk sebelumnya kebalik.
+   Butiran 10 grade = Menyan Madu (Gum Benzoin); blok cetak 11 varian = Menyan Bakar (Gum Benjamin). */
+const PRODUCTS={
+  madu:{name:'Menyan Madu',en:'Gum Benzoin',grades:[
+    {id:'big',name:'Big',en:'Big Grade',img:'big.jpg',d:L('The largest chunks, milky-pale in colour.','Bongkahan paling besar dengan warna terang seperti susu.')},
+    {id:'mata',name:'Mata',en:'Eye Grade',img:'mata.jpg',d:L('Large to medium tears, pale in colour.','Butir besar sampai sedang, warna terang.')},
+    {id:'cabutanl',name:'Cabutan L',en:'Cabutan L Grade',img:'cabutanl.jpg',d:L('Large picked tears, a mix of pale and dark.','Butir cabutan ukuran besar, campuran terang dan gelap.')},
+    {id:'juru',name:'Juru Cabutan',en:"Picker's Grade",img:'juru_cabutan.jpg',d:L('Tears gathered by the pickers, in mixed sizes.','Butir hasil cungkilan pemanen dengan ukuran campuran.')},
+    {id:'kacang',name:'Kacang',en:'Peanut Grade',img:'kacang.jpg',d:L('Peanut-sized tears, light brown.','Butir seukuran kacang tanah, kecokelatan.')},
+    {id:'jagung',name:'Jagung',en:'Corn Grade',img:'jagung.jpg',d:L('Corn-kernel-sized tears, cream coloured.','Butir seukuran biji jagung, warna krem.')},
+    {id:'aragan',name:'Aragan',en:'Aragan Grade',img:'aragan.jpg',d:L('Small tears with a darker colour.','Butir kecil dengan warna lebih gelap.')},
+    {id:'bibit',name:'Bibit',en:'Seed Grade',img:'bibit.jpg',d:L('Fine, seed-sized grains.','Butir halus seukuran biji-bijian.')},
+    {id:'pasir',name:'Pasir',en:'Sand Grade',img:'pasir.jpg',d:L('Fine crumbs, like sand.','Remah halus seperti pasir.')},
+    {id:'abu',name:'Abu',en:'Ash Grade',img:'abu.jpg',d:L('The finest powder.','Bubuk paling halus.')}]},
+  bakar:{name:'Menyan Bakar',en:'Gum Benjamin',grades:[
+    {id:'yellow',name:'Yellow',img:'yellow.webp',d:L('Golden-yellow moulded block.','Blok cetak kuning keemasan.')},
+    {id:'white',name:'White',img:'white.webp',d:L('Light cream moulded block.','Blok cetak krem terang.')},
+    {id:'aaa',name:'AAA',img:'aaa.webp',d:L('Brown block with pale grains.','Blok cokelat dengan butiran terang.')},
+    {id:'black',name:'Black',img:'black.webp',d:L('Black block with pale speckles.','Blok hitam berbintik terang.')},
+    {id:'red',name:'Red',img:'red.webp',d:L('Red moulded block.','Blok cetak merah.')},
+    {id:'brick',name:'Brick',img:'brick.webp',d:L('Dense, blackish-grey block.','Blok abu kehitaman yang padat.')},
+    {id:'green',name:'Green',img:'green.webp',d:L('Green moulded block.','Blok cetak hijau.')},
+    {id:'ma',name:'MA',img:'ma.webp',d:L('Black block with a fibrous texture.','Blok hitam bertekstur serat.')},
+    {id:'789',name:'789',img:'789.webp',d:L('Yellowish-brown block.','Blok kuning kecokelatan.')},
+    {id:'ant',name:'ANT',img:'ant.webp',d:L('Speckled black block.','Blok hitam berbintik.')},
+    {id:'mp',name:'MP',img:'mp.webp',d:L('Brown block with a fibrous texture.','Blok cokelat bertekstur serat.')}]}
+};
+const HOKI=[
+  {k:'Handal',en:'Reliable',v:L('Professional, resilient and visionary.','Profesional, tangguh, dan visioner.')},
+  {k:'Orientasi Pelanggan',en:'Customer Orientation',v:L('Attentive, committed, with quality service.','Perhatian, komitmen, dan mutu layanan.')},
+  {k:'Komitmen',en:'Commitment',v:L('Honest, fair, responsible and disciplined.','Jujur, adil, bertanggung jawab, dan disiplin.')},
+  {k:'Inovasi',en:'Innovation',v:L('Proactive, fast and environmentally aware.','Inisiatif, cepat, dan peduli lingkungan.')}];
+
+/* ===== util ===== */
+const $=s=>document.querySelector(s);
+const TAU=Math.PI*2;
+const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+const lerp=(a,b,t)=>a+(b-a)*t;
+const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+const seg=(p,a,b)=>clamp((p-a)/(b-a));
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function fit(cv){const d=Math.min(window.devicePixelRatio||1,2);const w=cv.clientWidth||1,h=cv.clientHeight||1;const W=Math.round(w*d),H=Math.round(h*d);if(cv.width!==W||cv.height!==H){cv.width=W;cv.height=H}const c=cv.getContext('2d');c.setTransform(d,0,0,d,0,0);c.imageSmoothingQuality='high';return[c,w,h]}
+
+/* ===== images ===== */
+const IMG={};
+const scenes=[];const cardViews=[];let shopView=null;
+let onImgT=0;function onImg(){clearTimeout(onImgT);onImgT=setTimeout(()=>{scenes.forEach(s=>s.dirty=true);cardViews.forEach(v=>v.req());if(shopView)shopView.req()},30)}
+function img(n){if(!IMG[n]){const i=new Image();i.decoding='async';i.onload=onImg;i.src='img/'+n;IMG[n]=i}return IMG[n]}
+const ok=i=>i&&i.complete&&i.naturalWidth>0;
+const isBlock=n=>n.endsWith('.webp');
+function velvet(c,w,h,warm){const g=c.createRadialGradient(w*.5,h*.45,0,w*.5,h*.5,Math.max(w,h)*.75);g.addColorStop(0,'#ffffff');g.addColorStop(1,warm?'#efe7d8':'#ebe5d9');c.fillStyle=g;c.fillRect(0,0,w,h)}
+function baseFit(im,w,h,block){const iw=im.naturalWidth,ih=im.naturalHeight;const s=block?Math.min(w/iw,h/ih)*.78:Math.max(w/iw,h/ih);return{s,ox:(w-iw*s)/2,oy:(h-ih*s)/2,iw,ih}}
+
+/* lens view on a photo */
+function lensView(cv,getName,opts={}){
+  const st={x:opts.x??.6,y:opts.y??.5,zoom:opts.zoom||2};
+  function draw(){const[c,w,h]=fit(cv);const n=getName();const im=img(n);const block=isBlock(n);
+    velvet(c,w,h,block&&opts.warm);
+    if(!ok(im)){c.fillStyle='#7d877f';c.font='500 12px "JetBrains Mono",monospace';c.textAlign='center';c.fillText(L('Loading photo…','Memuat foto…'),w/2,h/2);return}
+    const f=baseFit(im,w,h,block);
+    if(block){c.save();c.shadowColor='rgba(60,45,25,.28)';c.shadowBlur=24;c.shadowOffsetY=12;c.drawImage(im,f.ox,f.oy,f.iw*f.s,f.ih*f.s);c.restore()}
+    else c.drawImage(im,f.ox,f.oy,f.iw*f.s,f.ih*f.s);
+    const lx=st.x*w,ly=st.y*h,R=Math.min(w,h)*(opts.r||.25);
+    const sx=(lx-f.ox)/f.s,sy=(ly-f.oy)/f.s,s1=f.s*st.zoom;
+    c.save();c.beginPath();c.arc(lx,ly,R,0,TAU);c.clip();velvet(c,w,h,block&&opts.warm);c.drawImage(im,lx-sx*s1,ly-sy*s1,f.iw*s1,f.ih*s1);c.restore();
+    c.beginPath();c.arc(lx,ly,R,0,TAU);c.lineWidth=3;c.strokeStyle='#ffffff';c.stroke();c.lineWidth=2;c.strokeStyle='#a0603e';c.stroke();
+    c.beginPath();c.arc(lx,ly,R+5,0,TAU);c.lineWidth=1.5;c.strokeStyle='rgba(201,164,108,.8)';c.stroke();
+    c.font='600 11px "JetBrains Mono",monospace';c.fillStyle='#8a5232';c.textAlign='center';
+    const ty=ly+R+16<h-4?ly+R+16:ly-R-8;c.fillText(fmt1(st.zoom)+'×',lx,ty);
+  }
+  let raf=0;const req=()=>{if(!raf)raf=requestAnimationFrame(()=>{raf=0;draw()})};
+  const move=e=>{const b=cv.getBoundingClientRect();st.x=clamp((e.clientX-b.left)/b.width,.08,.92);st.y=clamp((e.clientY-b.top)/b.height,.1,.9);req()};
+  cv.addEventListener('pointermove',e=>{if(e.pointerType==='mouse')move(e)});
+  cv.addEventListener('pointerdown',move);
+  return{draw,req};
+}
+
+/* ===== procedural resin (hero + tree) ===== */
+const PAL={kasar:{core:'#fffdf8',mid:'#f4e6d6',rim:'#b99478'},sap:{core:'#ffffff',mid:'#f8ecf1',rim:'#d8b6c6',glass:1}};
+function makePiece(seed,opt={}){const R=rng(seed);const glass=!!opt.glass;const n=glass?9+Math.floor(R()*4):6+Math.floor(R()*5);
+  const squash=0.62+R()*0.45,rot=R()*TAU,pts=[];
+  for(let i=0;i<n;i++){const a=i/n*TAU+(R()-.5)*(glass?.25:.55);const rr=glass?(.82+R()*.3):(.66+R()*.48);const x=Math.cos(a)*rr,y=Math.sin(a)*rr*squash;pts.push([x*Math.cos(rot)-y*Math.sin(rot),x*Math.sin(rot)+y*Math.cos(rot)])}
+  const ip=[(R()-.5)*.35,(R()-.5)*.35],facets=[];for(let i=0;i<n;i++)if(R()<.65)facets.push([i,(i+1)%n,(R()-.42)*.5]);
+  const sparks=[];for(let i=0;i<40;i++)sparks.push([(R()-.5)*1.4,(R()-.5)*1.0,.004+R()*.012,R()]);
+  return{pts,ip,facets,sparks,hx:-.25-R()*.2,hy:-.32-R()*.15,glass}}
+function tracePiece(c,pc){const p=pc.pts,n=p.length;c.beginPath();
+  if(pc.glass){c.moveTo((p[n-1][0]+p[0][0])/2,(p[n-1][1]+p[0][1])/2);for(let i=0;i<n;i++){const a=p[i],b=p[(i+1)%n];c.quadraticCurveTo(a[0],a[1],(a[0]+b[0])/2,(a[1]+b[1])/2)}}
+  else{c.moveTo(p[0][0],p[0][1]);for(let i=1;i<n;i++)c.lineTo(p[i][0],p[i][1])}c.closePath()}
+function drawPiece(c,x,y,r,pc,pal,o={}){const a=o.alpha==null?1:o.alpha;if(a<=0)return;
+  c.save();c.globalAlpha=a;c.translate(x,y);c.rotate(o.angle||0);c.scale(r,r);
+  if(o.shadow!==false){c.save();c.translate(.08,.32);c.scale(1,.35);c.beginPath();c.arc(0,0,1.05,0,TAU);c.fillStyle='rgba(0,0,0,.35)';c.fill();c.restore()}
+  tracePiece(c,pc);const g=c.createRadialGradient(pc.hx,pc.hy,.05,0,0,1.2);g.addColorStop(0,pal.core);g.addColorStop(.55,pal.mid);g.addColorStop(1,pal.rim);c.fillStyle=g;c.fill();
+  c.save();c.clip();
+  if(!pal.glass){for(const f of pc.facets){const A=pc.pts[f[0]],B=pc.pts[f[1]];c.beginPath();c.moveTo(pc.ip[0],pc.ip[1]);c.lineTo(A[0],A[1]);c.lineTo(B[0],B[1]);c.closePath();c.fillStyle=f[2]>0?`rgba(255,255,255,${f[2]*.55})`:`rgba(90,45,20,${-f[2]*.45})`;c.fill()}}
+  else{const ig=c.createRadialGradient(pc.hx*.6,pc.hy*.6,0,pc.hx*.6,pc.hy*.6,.9);ig.addColorStop(0,'rgba(255,255,240,.55)');ig.addColorStop(1,'rgba(255,255,240,0)');c.fillStyle=ig;c.fillRect(-1.5,-1.5,3,3)}
+  if(o.detail){for(const s of pc.sparks){c.beginPath();c.arc(s[0],s[1],s[2],0,TAU);c.fillStyle=`rgba(255,255,255,${.25+s[3]*.6})`;c.fill()}}
+  c.beginPath();c.ellipse(pc.hx*.95,pc.hy*.95,.26,.11,-.5,0,TAU);c.fillStyle=pal.glass?'rgba(255,255,255,.75)':'rgba(255,255,255,.45)';c.fill();
+  c.restore();c.lineWidth=.025;c.strokeStyle='rgba(60,25,15,.3)';tracePiece(c,pc);c.stroke();c.restore()}
+
+/* ===== scenes ===== */
+function scene(name,draw,opt={}){const el=document.querySelector(`[data-scene="${name}"]`);const s={el,draw,anim:!!opt.anim,last:-1,dirty:true};scenes.push(s);return s}
+function progressOf(el){const r=el.getBoundingClientRect();const span=r.height-innerHeight;return{p:span>0?clamp(-r.top/span):0,vis:r.bottom>0&&r.top<innerHeight}}
+
+/* hero */
+const cvHero=$('#cvHero'),heroCopy=$('#heroCopy');const heroPiece=makePiece(7);const smoke=[];
+scene('hero',(p,t)=>{
+  const[c,w,h]=fit(cvHero);const m=Math.min(w,h);c.fillStyle='#f6f4ef';c.fillRect(0,0,w,h);
+  const z=ease(p);const bx=w*(w>760?.72:.5),by=lerp(h*(w>760?.7:.78),h*.5,z);
+  const glow=c.createRadialGradient(bx,by+m*.06,0,bx,by,m*lerp(.55,.9,z));glow.addColorStop(0,'rgba(201,164,108,.38)');glow.addColorStop(.45,'rgba(160,96,62,.14)');glow.addColorStop(1,'rgba(246,244,239,0)');c.fillStyle=glow;c.fillRect(0,0,w,h);
+  const ey=by+m*.09;const eg=c.createRadialGradient(bx,ey,0,bx,ey,m*.2);eg.addColorStop(0,'rgba(255,170,90,.9)');eg.addColorStop(.35,'rgba(255,120,60,.35)');eg.addColorStop(1,'rgba(255,120,60,0)');
+  c.save();c.translate(bx,ey);c.scale(1,.28);c.translate(-bx,-ey);c.fillStyle=eg;c.beginPath();c.arc(bx,ey,m*.2,0,TAU);c.fill();c.restore();
+  const N=RM?40:110;while(smoke.length<N)smoke.push({x:0,y:0,vx:0,vy:0,life:Math.random(),max:1,s:0,ph:Math.random()*TAU});
+  c.save();
+  for(const s of smoke){
+    if(s.life>=s.max||s.s===0){s.x=bx+(Math.random()-.5)*m*.05;s.y=by-m*.04;s.vx=(Math.random()-.5)*.25;s.vy=-(.5+Math.random()*.7);s.life=0;s.max=2.5+Math.random()*3;s.s=m*(.012+Math.random()*.02)}
+    s.life+=RM?.004:.016;const k=s.life/s.max;s.x+=s.vx+Math.sin(t*.0012+s.ph+k*5)*.55;s.y+=s.vy*(m/600);s.s*=1.008;
+    const a=Math.sin(Math.PI*k)*.11;const g=c.createRadialGradient(s.x,s.y,0,s.x,s.y,s.s*3);
+    g.addColorStop(0,`rgba(${Math.round(lerp(160,140,k))},${Math.round(lerp(150,135,k))},${Math.round(lerp(135,125,k))},${a})`);g.addColorStop(1,'rgba(150,135,120,0)');c.fillStyle=g;c.beginPath();c.arc(s.x,s.y,s.s*3,0,TAU);c.fill()}
+  c.restore();
+  drawPiece(c,bx,by,m*lerp(.085,.13,z),heroPiece,PAL.kasar,{angle:t*.00008,detail:z>.3});
+  heroCopy.style.transform=`scale(${1-z*.18})`;heroCopy.style.opacity=String(clamp(1-p*1.6));heroCopy.style.filter=p>.05?`blur(${p*8}px)`:'none';
+},{anim:true});
+
+/* word reveals */
+const HL=new Set(['goresan','putih','susu,','mengeras','dipetik','petani','balsamik','pilihan','utama','setia.','bangga','cut','milky','hardens','picked','farmers.','balsamic','first','best','loyal','proud']);
+const reveals=[...document.querySelectorAll('[data-reveal]')].map(el=>{el.innerHTML=el.textContent.trim().split(/\s+/).map(w=>`<span class="w${HL.has(w.toLowerCase())?' hl':''}">${w}</span> `).join('');return{el,words:[...el.querySelectorAll('.w')]}});
+function revealUpdate(){for(const r of reveals){const b=r.el.getBoundingClientRect();const p=clamp((innerHeight*.85-b.top)/(b.height+innerHeight*.35));const k=Math.floor(p*r.words.length*1.1);r.words.forEach((w,i)=>w.classList.toggle('on',i<k))}}
+
+/* tree: cerita panjang (Kak Intan 17 Nov 2026) - hutan & pohon -> petani datang -> disadap -> getah keluar
+   -> mengeras -> dipetik petani lokal ke keranjang -> masuk ke tampah (lanjut ke scene macro) */
+const cvTree=$('#cvTree');let barkCache=null;
+function makeBark(tw,h){const cv=document.createElement('canvas');const d=Math.min(window.devicePixelRatio||1,2);cv.width=Math.max(1,Math.round(tw*d));cv.height=Math.max(1,Math.round(h*d));const c=cv.getContext('2d');c.scale(d,d);
+  const g=c.createLinearGradient(0,0,tw,0);g.addColorStop(0,'#1d1210');g.addColorStop(.25,'#4d3a33');g.addColorStop(.55,'#6a5249');g.addColorStop(.85,'#3a2a25');g.addColorStop(1,'#140c0a');c.fillStyle=g;c.fillRect(0,0,tw,h);
+  const R=rng(42);for(let i=0;i<70;i++){let x=R()*tw;c.beginPath();c.moveTo(x,0);for(let y=0;y<=h;y+=24){x+=(R()-.5)*3;c.lineTo(x,y)}c.strokeStyle=`rgba(${R()<.5?'20,10,8':'150,125,115'},${.15+R()*.3})`;c.lineWidth=.6+R()*2;c.stroke()}
+  for(let i=0;i<40;i++){c.beginPath();c.ellipse(R()*tw,R()*h,4+R()*16,2+R()*6,0,0,TAU);c.fillStyle=`rgba(${R()<.5?'190,170,175':'170,205,140'},${.06+R()*.08})`;c.fill()}
+  return{cv,tw,h}}
+const cuts=[{y:.34,dx:-.12},{y:.5,dx:.1},{y:.66,dx:-.06}];
+const cutTears=cuts.map((_,i)=>[0,1,2].map(j=>makePiece(100+i*10+j)));
+const basketPieces=[...Array(9)].map((_,i)=>makePiece(300+i));
+
+function drawFarmer(c,x,y,s,walk,arm){ /* x,y = kaki; s = tinggi badan (px); menghadap kanan */
+  c.save();c.translate(x,y);c.scale(s/120,s/120);c.lineCap='round';c.lineJoin='round';
+  const sw=Math.sin(walk)*13;
+  c.strokeStyle='#33413a';c.lineWidth=9;
+  c.beginPath();c.moveTo(0,-44);c.lineTo(-sw*.5,-22);c.lineTo(-sw,0);c.stroke();
+  c.beginPath();c.moveTo(0,-44);c.lineTo(sw*.5,-22);c.lineTo(sw,0);c.stroke();
+  /* keranjang di punggung */
+  c.fillStyle='#b88a4e';c.beginPath();c.moveTo(-30,-84);c.lineTo(-8,-84);c.lineTo(-11,-48);c.lineTo(-27,-48);c.closePath();c.fill();
+  c.strokeStyle='rgba(90,60,25,.55)';c.lineWidth=1.6;for(let k=-80;k<-48;k+=6){c.beginPath();c.moveTo(-29,k);c.lineTo(-9,k);c.stroke()}
+  /* badan */
+  c.fillStyle='#4f6b45';c.beginPath();c.moveTo(-11,-88);c.lineTo(11,-88);c.lineTo(13,-42);c.lineTo(-13,-42);c.closePath();c.fill();
+  /* lengan (arm 0 = turun, 1 = menyadap ke depan) */
+  c.strokeStyle='#4f6b45';c.lineWidth=8;const ax=8+arm*22,ay=-60-arm*12;c.beginPath();c.moveTo(5,-82);c.lineTo(ax,ay);c.stroke();
+  c.fillStyle='#c98e5f';c.beginPath();c.arc(ax,ay,4.5,0,TAU);c.fill();
+  if(arm>.3){c.save();c.translate(ax,ay);c.rotate(-.6);c.fillStyle='#cfd6da';c.fillRect(0,-2,16,4);c.restore()}
+  /* kepala + caping */
+  c.fillStyle='#c98e5f';c.beginPath();c.arc(1,-99,9,0,TAU);c.fill();
+  c.fillStyle='#e0c084';c.beginPath();c.moveTo(-23,-101);c.lineTo(1,-121);c.lineTo(25,-101);c.closePath();c.fill();
+  c.strokeStyle='rgba(120,85,35,.5)';c.lineWidth=1.5;c.stroke();
+  c.restore()}
+
+function drawForest(c,w,h,trunkX,gy,t){
+  const sky=c.createLinearGradient(0,0,0,gy);sky.addColorStop(0,'#e4ece6');sky.addColorStop(1,'#f6f2e8');c.fillStyle=sky;c.fillRect(0,0,w,h);
+  c.fillStyle='rgba(212,185,140,.45)';c.beginPath();c.arc(w*.84,h*.16,Math.min(w,h)*.06,0,TAU);c.fill();
+  const hill=(base,amp,freq,ph,col)=>{c.beginPath();c.moveTo(0,h);for(let x=0;x<=w;x+=12)c.lineTo(x,base+Math.sin(x/w*freq+ph)*h*amp);c.lineTo(w,h);c.closePath();c.fillStyle=col;c.fill()};
+  hill(gy-h*.2,.04,5,1,'#d3dccb');hill(gy-h*.11,.035,7,2.4,'#b9c9ad');
+  const R=rng(21);for(let i=0;i<16;i++){const x=R()*w,s=.45+R()*.5;const by=gy-h*.02+R()*h*.03;if(Math.abs(x-trunkX)<w*.09){R();R();continue}
+    c.fillStyle='rgba(70,90,70,.55)';c.fillRect(x-2*s,by-h*.15*s,4*s,h*.15*s);
+    c.fillStyle=`rgba(${70+R()*30|0},${105+R()*30|0},${70+R()*20|0},.7)`;c.beginPath();c.ellipse(x,by-h*.17*s,h*.05*s,h*.07*s,0,0,TAU);c.fill()}
+  c.fillStyle='#a9bd92';c.fillRect(0,gy,w,h-gy);
+  c.fillStyle='rgba(60,80,50,.25)';c.beginPath();c.ellipse(trunkX,gy+4,h*.09,h*.012,0,0,TAU);c.fill();
+  const tw2=Math.max(18,Math.min(w,h)*.05),top=gy-h*.5;
+  const tg=c.createLinearGradient(trunkX-tw2/2,0,trunkX+tw2/2,0);tg.addColorStop(0,'#2a1c17');tg.addColorStop(.5,'#6a5249');tg.addColorStop(1,'#241713');
+  c.fillStyle=tg;c.beginPath();c.moveTo(trunkX-tw2*.75,gy+2);c.lineTo(trunkX-tw2*.45,top);c.lineTo(trunkX+tw2*.45,top);c.lineTo(trunkX+tw2*.75,gy+2);c.closePath();c.fill();
+  c.strokeStyle='#3a2a25';c.lineWidth=tw2*.22;c.lineCap='round';
+  [[-1,.02],[1,.06],[-1,.12],[1,.15]].forEach(([d,yy])=>{const y0=top+h*yy;c.beginPath();c.moveTo(trunkX,y0+h*.04);c.quadraticCurveTo(trunkX+d*tw2*1.6,y0,trunkX+d*tw2*2.8,y0-h*.06);c.stroke()});
+  const RC=rng(33),sway=Math.sin(t*.0008)*2;for(let i=0;i<18;i++){const a=RC()*TAU,r=Math.sqrt(RC());const cx=trunkX+Math.cos(a)*r*h*.15+sway,cy=top-h*.03+Math.sin(a)*r*h*.08;
+    c.fillStyle=`rgba(${55+RC()*40|0},${100+RC()*40|0},${60+RC()*25|0},.92)`;c.beginPath();c.ellipse(cx,cy,h*.065,h*.048,0,0,TAU);c.fill()}
+  /* bekas sadapan & getah putih kecil di batang */
+  for(let i=0;i<3;i++){const y=gy-h*(.14+i*.08);c.fillStyle='#f4ece0';c.beginPath();c.ellipse(trunkX+(i-1)*tw2*.15,y,tw2*.16,tw2*.1,0,0,TAU);c.fill()}
+  return tw2}
+
+function drawKnife(c,x,y,s){c.save();c.translate(x,y);c.rotate(-.45);
+  c.fillStyle='#d5dbde';c.beginPath();c.moveTo(0,0);c.lineTo(36*s,-7*s);c.lineTo(38*s,3*s);c.lineTo(3*s,5*s);c.closePath();c.fill();c.strokeStyle='rgba(60,70,75,.45)';c.lineWidth=1;c.stroke();
+  c.fillStyle='#6b4a2b';c.beginPath();c.roundRect?c.roundRect(36*s,-6*s,34*s,11*s,4*s):c.rect(36*s,-6*s,34*s,11*s);c.fill();
+  c.fillStyle='#c98e5f';c.beginPath();c.ellipse(54*s,0,13*s,10*s,0,0,TAU);c.fill();c.restore()}
+
+function drawHand(c,x,y,ax,ay,s){ /* lengan dari ax,ay; ujung jari (titik jepit) di x,y */
+  const ang=Math.atan2(y-ay,x-ax);
+  c.save();c.lineCap='round';c.strokeStyle='#4f6b45';c.lineWidth=26*s;c.beginPath();c.moveTo(ax,ay);c.lineTo(x-Math.cos(ang)*26*s,y-Math.sin(ang)*26*s);c.stroke();
+  c.strokeStyle='#e9e1cf';c.lineWidth=5*s;c.beginPath();const cx=x-Math.cos(ang)*28*s,cy=y-Math.sin(ang)*28*s;c.moveTo(cx-Math.sin(ang)*12*s,cy+Math.cos(ang)*12*s);c.lineTo(cx+Math.sin(ang)*12*s,cy-Math.cos(ang)*12*s);c.stroke();
+  c.translate(x,y);c.rotate(ang);c.fillStyle='#c98e5f';c.strokeStyle='rgba(90,50,25,.35)';c.lineWidth=1.2;
+  c.beginPath();c.ellipse(-14*s,0,15*s,12*s,0,0,TAU);c.fill();c.stroke();
+  c.beginPath();c.ellipse(1*s,-7*s,11*s,4.4*s,-.2,0,TAU);c.fill();c.stroke();
+  c.beginPath();c.ellipse(-3*s,-13*s,9*s,4*s,-.1,0,TAU);c.fill();c.stroke();
+  c.beginPath();c.ellipse(-1*s,7*s,10*s,4.4*s,.35,0,TAU);c.fill();c.stroke();
+  c.restore()}
+
+function drawBasket(c,x,y,R,n,a){if(a<=0)return;c.save();c.globalAlpha=a;
+  c.fillStyle='rgba(40,50,30,.18)';c.beginPath();c.ellipse(x,y+R*.95,R*1.2,R*.22,0,0,TAU);c.fill();
+  c.fillStyle='#6e4b28';c.beginPath();c.ellipse(x,y-R*.55,R*1.05,R*.3,0,0,TAU);c.fill();
+  for(let i=0;i<n;i++){const col=i%3,row=Math.floor(i/3);drawPiece(c,x+(col-1)*R*.5+(row%2)*R*.18,y-R*.58-row*R*.13,R*.21,basketPieces[i],PAL.kasar,{shadow:false})}
+  const g=c.createLinearGradient(x-R,0,x+R,0);g.addColorStop(0,'#a87a43');g.addColorStop(.5,'#d6ad6a');g.addColorStop(1,'#99703c');
+  c.fillStyle=g;c.beginPath();c.moveTo(x-R*1.05,y-R*.55);c.lineTo(x+R*1.05,y-R*.55);c.lineTo(x+R*.78,y+R*.9);c.quadraticCurveTo(x,y+R*1.05,x-R*.78,y+R*.9);c.closePath();c.fill();
+  c.save();c.clip();c.strokeStyle='rgba(95,62,28,.45)';c.lineWidth=1.4;
+  for(let k=-R*.4;k<R;k+=R*.16){c.beginPath();c.moveTo(x-R*1.1,y+k);c.lineTo(x+R*1.1,y+k);c.stroke()}
+  for(let k=-R*1.1;k<R*1.1;k+=R*.2){c.beginPath();c.moveTo(x+k,y-R*.6);c.lineTo(x+k*.75,y+R);c.stroke()}
+  c.restore();
+  c.strokeStyle='#8a6034';c.lineWidth=Math.max(3,R*.09);c.beginPath();c.ellipse(x,y-R*.55,R*1.05,R*.3,0,0,Math.PI);c.stroke();
+  c.restore()}
+
+function pill(c,x,y,txt,a){if(a<=0)return;c.save();c.globalAlpha=a;c.font='700 13px Lato,sans-serif';const tw=c.measureText(txt).width+28;
+  c.fillStyle='rgba(255,255,255,.92)';c.beginPath();c.roundRect?c.roundRect(x-tw/2,y-16,tw,32,16):c.rect(x-tw/2,y-16,tw,32);c.fill();
+  c.strokeStyle='#e3ddd0';c.lineWidth=1;c.stroke();c.fillStyle='#1a2e28';c.textAlign='center';c.textBaseline='middle';c.fillText(txt,x,y+1);c.restore()}
+
+/* garis waktu (p 0..1):
+   .00-.12 hutan, petani berjalan ke pohon | .06-.20 kamera mendekat ke batang | .22-.34 disadap
+   .32-.50 getah keluar | .50-.64 mengeras | .62-.86 dipetik ke keranjang | .88-1 masuk ke keranjang -> tampah */
+scene('tree',(p,t)=>{
+  const[c,w,h]=fit(cvTree);const wide=w>760;const tw=Math.min(w*.36,320),tx=w*(wide?.62:.5)-tw/2,trunkX=tx+tw/2;
+  if(!barkCache||barkCache.tw!==tw||barkCache.h!==h)barkCache=makeBark(tw,h);
+  const bkR=wide?58:Math.min(42,w*.1),bkX=wide?Math.min(w-bkR*1.6,tx+tw+Math.max(120,(w-tx-tw)*.5)):w*.84,bkY=wide?h*.78:h*.5;
+  const z=ease(seg(p,.88,1));const fx=bkX,fy=bkY-bkR*.55;
+  c.save();c.fillStyle='#f6f4ef';c.fillRect(0,0,w,h);
+  c.translate(w/2,h/2);c.scale(lerp(1,3,z),lerp(1,3,z));c.translate(-lerp(w/2,fx,z),-lerp(h/2,fy,z));
+  const bg=c.createLinearGradient(0,0,0,h);bg.addColorStop(0,'#e6ece4');bg.addColorStop(1,'#f1eee2');c.fillStyle=bg;c.fillRect(-w,-h,w*3,h*3);
+  const R=rng(9);for(let i=0;i<9;i++){const x=R()*w,ww=10+R()*40;c.fillStyle=`rgba(110,130,100,${.12+R()*.15})`;c.fillRect(x,0,ww,h)}
+  for(let i=0;i<3;i++){const y=h*(.3+i*.22);const mg=c.createLinearGradient(0,y-60,0,y+60);mg.addColorStop(0,'rgba(255,255,255,0)');mg.addColorStop(.5,'rgba(255,255,255,.55)');mg.addColorStop(1,'rgba(255,255,255,0)');c.fillStyle=mg;c.fillRect(-w,y-60,w*3,120)}
+  c.drawImage(barkCache.cv,tx,0,tw,h);
+  const harden=seg(p,.5,.62),hv=seg(p,.62,.86),pk=hv*9;
+  const tears=[];
+  cuts.forEach((k,i)=>{const cp=ease(seg(p,.22+i*.04,.3+i*.04));if(cp<=0)return;
+    const cx=tx+tw*(.5+k.dx),cy=h*k.y,cw=tw*.32*cp;
+    c.beginPath();c.moveTo(cx-cw/2,cy-8);c.lineTo(cx,cy+10);c.lineTo(cx+cw/2,cy-8);c.lineTo(cx+cw/2-4,cy-11);c.lineTo(cx,cy+4);c.lineTo(cx-cw/2+4,cy-11);c.closePath();c.fillStyle='#d8b48d';c.fill();c.strokeStyle='#2a1610';c.lineWidth=2;c.stroke();
+    if(cp<1)drawKnife(c,cx+cw/2,cy-6,wide?1.1:.85);
+    const dp=seg(p,.32+i*.03,.5);
+    [-.18,.02,.2].forEach((o,j)=>{const n=i*3+j;const len=h*(.05+j*.025+(i===0&&j===1?.05:0))*ease(dp);const x0=cx+tw*.32*o,y0=cy+4-Math.abs(o)*30;
+      tears[n]={x:x0,y:y0+len,pc:cutTears[i][j]};
+      if(dp<=0||pk-n>.45)return;
+      const col=`rgba(${Math.round(lerp(255,246,harden))},${Math.round(lerp(250,230,harden))},${Math.round(lerp(252,212,harden))},.96)`;const wd=lerp(7,9,j/2)*(.6+dp*.4);
+      c.beginPath();c.moveTo(x0-wd/2,y0);c.bezierCurveTo(x0-wd*.4,y0+len*.5,x0-wd*.25,y0+len*.8,x0,y0+len);c.bezierCurveTo(x0+wd*.25,y0+len*.8,x0+wd*.4,y0+len*.5,x0+wd/2,y0);c.closePath();c.fillStyle=col;c.fill();
+      drawPiece(c,x0,y0+len,wd*.95,cutTears[i][j],harden>.5?PAL.kasar:PAL.sap,{shadow:false,detail:z>.2});
+      if(harden>0)drawPiece(c,x0,y0+2,wd*1.3*harden,cutTears[i][(j+1)%3],PAL.kasar,{shadow:false,alpha:harden})})});
+  /* keranjang + tangan petani */
+  const inB=Math.max(0,Math.min(9,Math.floor(pk)));
+  drawBasket(c,bkX,bkY,bkR,inB,seg(p,.58,.64));
+  if(hv>0&&hv<1&&tears.length===9){const n=Math.min(8,Math.floor(pk)),tt=pk-n,T=tears[n];
+    const home={x:bkX,y:bkY-bkR*1.5},drop={x:bkX+((n%3)-1)*bkR*.4,y:bkY-bkR*.7};const anc=wide?{x:w+80,y:h*1.05}:{x:w+60,y:h*.8};
+    const start=n===0?{x:lerp(anc.x,home.x,.5),y:lerp(anc.y,home.y,.5)}:home;let hx,hy,carry=false;
+    if(tt<.45){const u=ease(tt/.45);hx=lerp(start.x,T.x,u);hy=lerp(start.y,T.y,u)}
+    else{const u=ease((tt-.45)/.55);hx=lerp(T.x,drop.x,u);hy=lerp(T.y,drop.y,u)-Math.sin(u*Math.PI)*h*.06;carry=true}
+    if(carry)drawPiece(c,hx,hy,9,T.pc,PAL.kasar,{shadow:false});
+    drawHand(c,hx+6,hy+2,anc.x,anc.y,wide?1:.8)}
+  c.restore();
+  /* pembuka: hutan + petani (ditumpuk di atas, lalu kamera menyelam ke batang) */
+  const wa=1-seg(p,.13,.21);
+  if(wa>0){const gy=wide?h*.8:h*.6,wz=ease(seg(p,.06,.2)),S=lerp(1,6,wz),cy0=gy-h*.3;
+    c.save();c.globalAlpha=wa;c.translate(trunkX,lerp(cy0,h*.5,wz));c.scale(S,S);c.translate(-trunkX,-cy0);
+    const tw2=drawForest(c,w,h,trunkX,gy,t);
+    const fw=seg(p,0,.1),fh=Math.min(h*.17,150);const sx=wide?Math.max(w*.36,trunkX-w*.32):Math.max(w*.06,trunkX-w*.42);
+    drawFarmer(c,lerp(sx,trunkX-tw2*1.25-fh*.12,ease(fw)),gy+2,fh,p*170,ease(seg(p,.1,.14)));
+    c.restore()}
+  if(z>0){c.fillStyle=`rgba(246,244,239,${seg(z,.75,1)})`;c.fillRect(0,0,w,h)}
+  pill(c,trunkX,wide?h*.2:h*.3,L('Weeks later…','Beberapa minggu kemudian…'),Math.sin(Math.PI*seg(p,.5,.64)));
+  const idx=p<.12?0:p<.3?1:p<.48?2:p<.62?3:p<.87?4:5;$('#treeSteps').querySelectorAll('li').forEach((li,i)=>li.classList.toggle('on',i===idx));
+},{anim:true});
+
+/* macro: real photo zoom */
+const cvMacro=$('#cvMacro');const notes=isID?['Satu tampah Menyan Madu grade Big, hasil sortir tangan.','Bongkahan Big berwarna terang seperti susu, dengan bidang patahan yang tajam.','Dari dekat terlihat lapisan getah yang mengeras di batang pohon.']:['One tray of Menyan Madu, Big grade, sorted by hand.','Big chunks are milky-pale, with sharp fracture faces.','Up close you can see the layers of resin that hardened on the trunk.'];
+scene('macro',p=>{
+  const[c,w,h]=fit(cvMacro);c.fillStyle='#1e2a22';c.fillRect(0,0,w,h);const im=img('big.jpg');
+  const z=ease(p);const zoom=lerp(1,1.8,z);
+  if(ok(im)){const iw=im.naturalWidth,ih=im.naturalHeight;const s0=Math.max(w/iw,h/ih),s=s0*zoom;
+    const fx=lerp(iw/2,iw*.56,z),fy=lerp(ih/2,ih*.46,z);let dx=w/2-fx*s,dy=h/2-fy*s;dx=clamp(dx,w-iw*s,0);dy=clamp(dy,h-ih*s,0);
+    c.drawImage(im,dx,dy,iw*s,ih*s)}
+  const v=c.createRadialGradient(w/2,h/2,Math.min(w,h)*.25,w/2,h/2,Math.max(w,h)*.75);v.addColorStop(0,'rgba(20,32,24,0)');v.addColorStop(1,`rgba(20,32,24,${lerp(.45,.7,z)})`);c.fillStyle=v;c.fillRect(0,0,w,h);
+  const tint=c.createLinearGradient(0,0,0,h);tint.addColorStop(0,'rgba(20,32,24,.6)');tint.addColorStop(.35,'rgba(20,32,24,0)');tint.addColorStop(1,'rgba(160,96,62,.10)');c.fillStyle=tint;c.fillRect(0,0,w,h);
+  $('#magVal').textContent=fmt1(zoom);
+  const ni=p<.33?0:p<.66?1:2;const nt=$('#macroNote');if(nt.dataset.i!==String(ni)){nt.dataset.i=ni;nt.textContent=notes[ni]}
+});
+
+/* products: rotating basket + floating blocks */
+const cvProd=$('#cvProd');const BLOCKS=['yellow.webp','red.webp','green.webp','white.webp','aaa.webp','black.webp','789.webp','brick.webp'];
+scene('products',p=>{
+  const[c,w,h]=fit(cvProd);const m=Math.min(w,h);const mix=ease(seg(p,.42,.58));const wide=w>760;
+  const cx=wide?w*.68:w*.5,cy=wide?h*.55:h*.38;
+  c.fillStyle='#f6f4ef';c.fillRect(0,0,w,h);
+  const col=[Math.round(lerp(201,160,mix)),Math.round(lerp(164,96,mix)),Math.round(lerp(108,62,mix))];
+  const gl=c.createRadialGradient(cx,cy,0,cx,cy,m*.8);gl.addColorStop(0,`rgba(${col},.30)`);gl.addColorStop(1,'rgba(246,244,239,0)');c.fillStyle=gl;c.fillRect(0,0,w,h);
+  const a1=1-mix;if(a1>.01){const im=img('mata.jpg');const R=m*(wide?.36:.32)*lerp(1,.85,mix);
+    c.save();c.globalAlpha=a1;c.translate(cx,cy);c.rotate(p*TAU*.5);c.beginPath();c.arc(0,0,R,0,TAU);c.clip();
+    if(ok(im)){const iw=im.naturalWidth,ih=im.naturalHeight,s=(R*2)/Math.min(iw,ih)*1.05;c.drawImage(im,-iw*s/2,-ih*s/2,iw*s,ih*s)}
+    c.restore();
+    c.save();c.globalAlpha=a1;c.beginPath();c.arc(cx,cy,R+6,0,TAU);c.lineWidth=2;c.strokeStyle='rgba(201,164,108,.9)';c.stroke();
+    c.beginPath();c.arc(cx,cy,R+18,-Math.PI/2,-Math.PI/2+TAU*seg(p,0,.45));c.lineWidth=3;c.strokeStyle='#a0603e';c.stroke();c.restore()}
+  if(mix>.01){const items=BLOCKS.map((n,i)=>{const a=i/BLOCKS.length*TAU+p*TAU*1.2;return{n,a,d:(Math.sin(a)+1)/2}}).sort((a,b)=>a.d-b.d);
+    const drawB=it=>{const im=img(it.n);if(!ok(im))return;const sz=m*lerp(.11,.2,it.d);const s=sz/Math.max(im.naturalWidth,im.naturalHeight);
+      const x=cx+Math.cos(it.a)*m*.36,y=cy+Math.sin(it.a)*m*.1;c.save();c.globalAlpha=mix*lerp(.45,1,it.d);c.translate(x,y);c.rotate(Math.cos(it.a)*.25);c.drawImage(im,-im.naturalWidth*s/2,-im.naturalHeight*s/2,im.naturalWidth*s,im.naturalHeight*s);c.restore()};
+    items.filter(i=>i.d<.5).forEach(drawB);
+    const hero=img('yellow.webp');if(ok(hero)){const sz=m*.4;const s=sz/Math.max(hero.naturalWidth,hero.naturalHeight);c.save();c.globalAlpha=mix;c.translate(cx,cy-m*.02+Math.sin(p*TAU*2)*m*.015);c.rotate(Math.sin(p*TAU)*.08);
+      c.shadowColor='rgba(60,45,25,.3)';c.shadowBlur=40;c.shadowOffsetY=20;c.drawImage(hero,-hero.naturalWidth*s/2,-hero.naturalHeight*s/2,hero.naturalWidth*s,hero.naturalHeight*s);c.restore()}
+    items.filter(i=>i.d>=.5).forEach(drawB)}
+  const cb=$('#copyA'),cm=$('#copyB');
+  cb.style.opacity=String(1-mix);cm.style.opacity=String(mix);
+  cb.style.transform=`translateY(${-mix*20}px)`;cm.style.transform=`translateY(${(1-mix)*20}px)`;
+  cb.style.visibility=mix>.98?'hidden':'visible';cm.style.visibility=mix<.02?'hidden':'visible';
+  $('#dotA').classList.toggle('on',mix<.5);$('#dotB').classList.toggle('on',mix>=.5);
+});
+
+/* grades */
+const track=$('#track');
+for(const [key,prod] of Object.entries(PRODUCTS)){
+  const d=document.createElement('div');d.className='divider-card '+key;
+  d.innerHTML=`<span class="eyebrow">${prod.en} · ${prod.grades.length} ${key==='madu'?L('grades','grade'):L('variants','varian')}</span><h3>${prod.name}</h3><p>${key==='madu'?L('From Big chunks to fine Ash powder, sorted by grain size.','Dari bongkahan Big sampai bubuk Abu, dipilah menurut ukuran butir.'):L('Moulded blocks in eleven colours and textures.','Blok cetak dalam sebelas warna dan tekstur.')}</p><span class="hint">${L('Keep scrolling →','Terus gulir →')}</span>`;
+  track.appendChild(d);
+  for(const g of prod.grades){const el=document.createElement('article');el.className='gcard '+key;
+    el.innerHTML=`<div class="shot"><canvas aria-label="${L('Close-up photo of','Foto dekat')} ${prod.name} ${g.name}"></canvas><span class="badge">${g.en||prod.en}</span></div>
+    <div class="body"><span class="kind">${prod.name}</span><h3>${g.name}</h3><p class="d">${g.d}</p>
+    <div class="gfoot"><span>${prod.en}</span><button type="button">${L('Order this grade','Pesan grade ini')}</button></div></div>`;
+    el.querySelector('button').addEventListener('click',()=>{selectCfg(key,g.id);document.getElementById('belanja').scrollIntoView({behavior:RM?'auto':'smooth'})});
+    track.appendChild(el);cardViews.push(lensView(el.querySelector('canvas'),()=>g.img,{warm:true}))}
+}
+const gradesSec=$('#grade');
+function sizeGrades(){const extra=Math.max(0,track.scrollWidth-innerWidth);gradesSec.style.height=(innerHeight+extra)+'px';gradesSec.dataset.extra=extra}
+scene('grades',p=>{track.style.transform=`translateX(${-p*(+gradesSec.dataset.extra||0)}px)`});
+
+/* since 2017 */
+scene('since',p=>{const y=Math.round(lerp(2017,2026,ease(seg(p,.15,.85))));$('#yearVal').textContent=y;const n=y-2017;
+  $('#yearSub').textContent=y===2017?L('Founded April 2017 · West Jakarta','Berdiri April 2017 · Jakarta Barat'):L(`${n} year${n>1?'s':''} in business · West Jakarta`,`${n} tahun berjalan · Jakarta Barat`)});
+
+/* HOKI */
+let hokiIdx=-1;
+function hokiShow(i){hokiIdx=i;const h=HOKI[i];$('#hokiCard').innerHTML=`<h3><span style="color:var(--sky)">${h.k[0]}</span>${h.k.slice(1)}</h3><span class="en">${h.en}</span><p class="val">${h.v}</p>`}
+hokiShow(0);
+scene('hoki',p=>{const i=Math.min(3,Math.floor(p*4.2));document.querySelectorAll('.hoki-letters span').forEach((s,k)=>{s.classList.toggle('on',k===i);s.classList.toggle('done',k<i)});
+  if(i!==hokiIdx)hokiShow(i)});
+
+/* ilustrasi tiga bahan (gaya konsep: resin dekoratif di latar krem) - foto asli dipakai untuk 2 kemenyan */
+const ING=[{cv:'#cvIngA',kind:'photo',img:'mata.jpg'},{cv:'#cvIngB',kind:'blocks'},{cv:'#cvIngC',kind:'gambir'}];
+const gambirR=rng(77);const gambirCubes=[...Array(7)].map(()=>({x:gambirR(),y:gambirR(),r:(gambirR()-.5)*.5,s:.7+gambirR()*.5,t:gambirR()}));
+function drawIng(o,t){const cv=$(o.cv);const[c,w,h]=fit(cv);c.fillStyle='#ece3d4';c.fillRect(0,0,w,h);const m=Math.min(w,h);const bob=RM?0:Math.sin(t*.0012)*m*.01;
+  if(o.kind==='photo'){const im=img(o.img);if(ok(im)){const R=m*.38;c.save();c.beginPath();c.arc(w/2,h/2+bob,R,0,TAU);c.clip();const s=(R*2)/Math.min(im.naturalWidth,im.naturalHeight)*1.05;c.drawImage(im,w/2-im.naturalWidth*s/2,h/2+bob-im.naturalHeight*s/2,im.naturalWidth*s,im.naturalHeight*s);c.restore();
+      c.beginPath();c.arc(w/2,h/2+bob,R+8,0,TAU);c.strokeStyle='rgba(201,164,108,.9)';c.lineWidth=2;c.stroke()}}
+  else if(o.kind==='blocks'){['yellow.webp','red.webp','black.webp','aaa.webp','green.webp'].forEach((n,i)=>{const im=img(n);if(!ok(im))return;const a=i/5*TAU+(RM?0:t*.00015);const sz=m*(i===0?.42:.24);const s=sz/Math.max(im.naturalWidth,im.naturalHeight);
+      const x=i===0?w/2:w/2+Math.cos(a)*m*.36,y=i===0?h/2+bob:h/2+Math.sin(a)*m*.26;c.save();c.translate(x,y);c.rotate(Math.cos(a)*.2);c.shadowColor='rgba(60,40,20,.25)';c.shadowBlur=18;c.shadowOffsetY=10;c.drawImage(im,-im.naturalWidth*s/2,-im.naturalHeight*s/2,im.naturalWidth*s,im.naturalHeight*s);c.restore()})}
+  else{const cols=[['#a8794f','#d4ae7e'],['#7a5136','#a87452'],['#9b6a45','#c08a5c'],['#6c4a33','#946747'],['#c39466','#ddb98c']];
+    gambirCubes.forEach((q,i)=>{const sz=m*.2*q.s,x=w*(.22+q.x*.56),y=h*(.22+q.y*.56)+(RM?0:Math.sin(t*.001+q.t*6)*m*.008),cc=cols[i%5];c.save();c.translate(x,y);c.rotate(q.r);
+      c.shadowColor='rgba(60,40,20,.25)';c.shadowBlur=14;c.shadowOffsetY=8;c.fillStyle=cc[0];c.beginPath();c.roundRect?c.roundRect(-sz/2,-sz/2,sz,sz*.9,sz*.08):c.rect(-sz/2,-sz/2,sz,sz*.9);c.fill();c.shadowColor='transparent';
+      c.fillStyle=cc[1];c.beginPath();c.roundRect?c.roundRect(-sz/2+sz*.06,-sz/2+sz*.06,sz*.88,sz*.3,sz*.06):c.rect(-sz/2+sz*.06,-sz/2+sz*.06,sz*.88,sz*.3);c.fill();
+      c.strokeStyle='rgba(60,35,20,.35)';c.lineWidth=1;for(let k=0;k<6;k++){const xx=-sz*.35+k*sz*.13;c.beginPath();c.moveTo(xx,sz*.22);c.lineTo(xx+sz*.04,sz*.32);c.stroke()}c.restore()})}
+}
+/* reveal-on-view: vision cards + org */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.off-l,.off-r').forEach(a=>a.classList.remove('off-l','off-r'));if(e.target.id==='org')e.target.classList.add('lit');io.unobserve(e.target)}}),{threshold:.2});
+io.observe($('#vm'));io.observe($('#org'));
+
+/* map card: Indonesia dots with Jakarta pulse */
+const cvMap=$('#cvMap');
+const ISL=[[.06,.16,.30,.52,-.6],[.31,.62,.56,.70,0],[.36,.24,.55,.50,0],[.58,.30,.66,.60,.2],[.76,.40,.97,.62,0],[.58,.70,.78,.76,0]];
+function drawMap(t){const[c,w,h]=fit(cvMap);c.fillStyle='#ffffff';c.fillRect(0,0,w,h);
+  const R=rng(5);c.fillStyle='rgba(201,164,108,.6)';
+  for(let x=6;x<w;x+=9)for(let y=6;y<h;y+=9){const u=x/w,v=y/h;const r=R();if(ISL.some(b=>{const off=(u-b[0])*b[4]*.4;return u>b[0]&&u<b[2]&&v>b[1]+off&&v<b[3]+off})&&r<.8){c.beginPath();c.arc(x,y,1.6,0,TAU);c.fill()}}
+  const jx=w*.355,jy=h*.635;const k=RM?.3:(t%2200)/2200;
+  c.beginPath();c.arc(jx,jy,6+k*28,0,TAU);c.strokeStyle=`rgba(160,96,62,${1-k})`;c.lineWidth=2;c.stroke();
+  c.beginPath();c.arc(jx,jy,6,0,TAU);c.fillStyle='#a0603e';c.fill();
+  c.font='700 13px Lato,sans-serif';c.fillStyle='#1a2e28';c.textAlign='left';c.fillText(L('Winros · West Jakarta','Winros · Jakarta Barat'),jx+14,jy+4)}
+
+/* ===== order configurator ===== */
+const cfg={prod:'madu',grade:'big',q:10};
+const curGrade=()=>PRODUCTS[cfg.prod].grades.find(g=>g.id===cfg.grade)||PRODUCTS[cfg.prod].grades[0];
+shopView=lensView($('#cvShop'),()=>curGrade().img,{x:.5,y:.5,zoom:2,r:.22,warm:true});
+function chip(label,pressed,fn){const b=document.createElement('button');b.type='button';b.className='chip';b.setAttribute('aria-pressed',pressed);b.textContent=label;b.addEventListener('click',fn);return b}
+function renderCfg(){const g=curGrade();cfg.grade=g.id;const P=$('#chipProd'),G=$('#chipGrade');P.innerHTML='';G.innerHTML='';
+  for(const [k,pr] of Object.entries(PRODUCTS))P.appendChild(chip(pr.name,k===cfg.prod,()=>{cfg.prod=k;cfg.grade=pr.grades[0].id;renderCfg()}));
+  for(const gg of PRODUCTS[cfg.prod].grades)G.appendChild(chip(gg.name,gg.id===cfg.grade,()=>{cfg.grade=gg.id;renderCfg()}));
+  $('#qVal').textContent=cfg.q+' kg';$('#shopBadge').textContent=`${PRODUCTS[cfg.prod].name} · ${g.name}`;
+  $('#cfgSum').textContent=`${cfg.q} kg ${PRODUCTS[cfg.prod].name} ${g.name}`;shopView.req()}
+function selectCfg(p,g){cfg.prod=p;cfg.grade=g;renderCfg()}
+const STEP=q=>q<10?1:q<50?5:q<200?10:50;
+$('#qMinus').addEventListener('click',()=>{cfg.q=Math.max(1,cfg.q-STEP(cfg.q-1));renderCfg()});
+$('#qPlus').addEventListener('click',()=>{cfg.q=Math.min(10000,cfg.q+STEP(cfg.q));renderCfg()});
+
+/* ===== order list ===== */
+let cart=[];try{cart=JSON.parse(localStorage.getItem('winros-order')||'[]')||[]}catch(e){cart=[]}
+cart=Array.isArray(cart)?cart.filter(it=>it&&PRODUCTS[it.prod]&&PRODUCTS[it.prod].grades.some(g=>g.id===it.grade)&&it.q>0):[];
+const save=()=>{try{localStorage.setItem('winros-order',JSON.stringify(cart))}catch(e){}};
+const info=it=>{const pr=PRODUCTS[it.prod];return{pr,g:pr.grades.find(x=>x.id===it.grade)}};
+const totalKg=()=>cart.reduce((s,i)=>s+i.q,0);
+function toast(t){const el=$('#toast');el.textContent=t;el.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove('show'),1800)}
+function renderCart(){
+  $('#cartCount').textContent=cart.length;const box=$('#items');box.innerHTML='';
+  if(!cart.length){box.innerHTML=`<div class="empty"><p>${L('No items yet.','Belum ada pesanan.')}</p><a class="btn btn-ghost" href="#belanja" id="goShop">${L('Choose kemenyan','Pilih kemenyan')}</a></div>`;$('#goShop').addEventListener('click',closeCart)}
+  cart.forEach((it,i)=>{const{pr,g}=info(it);const el=document.createElement('div');el.className='item';
+    el.innerHTML=`<img src="img/${g.img}" alt="" class="${isBlock(g.img)?'blk':''}"><div><h4>${pr.name} · ${g.name}</h4><p>${pr.en}</p><button class="rm" type="button">${L('Remove','Hapus')}</button></div>
+    <div class="qty"><button type="button" aria-label="${L('Decrease','Kurangi')}">−</button><output>${it.q} kg</output><button type="button" aria-label="${L('Increase','Tambah')}">+</button></div>`;
+    const[bm,bp]=el.querySelectorAll('.qty button');
+    bm.addEventListener('click',()=>{it.q-=STEP(it.q-1);if(it.q<1)cart.splice(i,1);save();renderCart()});
+    bp.addEventListener('click',()=>{it.q=Math.min(10000,it.q+STEP(it.q));save();renderCart()});
+    el.querySelector('.rm').addEventListener('click',()=>{cart.splice(i,1);save();renderCart()});box.appendChild(el)});
+  $('#subtotal').textContent=totalKg()+' kg';$('#toCheckout').disabled=!cart.length}
+$('#addCart').addEventListener('click',()=>{const ex=cart.find(x=>x.prod===cfg.prod&&x.grade===cfg.grade);if(ex)ex.q=Math.min(10000,ex.q+cfg.q);else cart.push({prod:cfg.prod,grade:cfg.grade,q:cfg.q});save();renderCart();toast(L('Added to your order','Ditambahkan ke pesanan'));
+  const b=$('#openCart');if(b.animate)b.animate([{transform:'scale(1)'},{transform:'scale(1.15)'},{transform:'scale(1)'}],{duration:350})});
+function openCart(){$('#drawer').classList.add('open');$('#drawer').setAttribute('aria-hidden','false');$('#scrim').classList.add('open');renderCart();setTimeout(()=>$('#closeCart').focus(),50)}
+function closeCart(){$('#drawer').classList.remove('open');$('#drawer').setAttribute('aria-hidden','true');if(!$('#modal').classList.contains('open'))$('#scrim').classList.remove('open')}
+$('#openCart').addEventListener('click',openCart);$('#closeCart').addEventListener('click',closeCart);
+$('#scrim').addEventListener('click',()=>{closeCart();closeCo()});
+addEventListener('keydown',e=>{if(e.key==='Escape'){closeCo();closeCart()}});
+
+/* ===== checkout ===== */
+let step=1;
+function showStep(n){step=n;['step1','step2','step3','step4'].forEach((id,i)=>$('#'+id).hidden=i!==n-1);
+  document.querySelectorAll('.progress i').forEach((el,i)=>el.classList.toggle('on',i<Math.min(n,3)));
+  $('#coTitle').textContent=(isID?['Data pemesan','Transaksi & pengiriman','Periksa pesanan','Selesai']:['Your details','Transaction & delivery','Review your order','Done'])[n-1];
+  $('#coBack').hidden=n===1||n===4;$('#coNext').textContent=n===3?L('Place order','Buat pesanan'):n===4?L('Close','Tutup'):L('Next','Lanjut');if(n===3)buildRecap()}
+function openCo(){closeCart();$('#scrim').classList.add('open');$('#modal').classList.add('open');$('#modal').setAttribute('aria-hidden','false');showStep(1);setTimeout(()=>$('#fNama').focus(),60)}
+function closeCo(){$('#modal').classList.remove('open');$('#modal').setAttribute('aria-hidden','true');if(!$('#drawer').classList.contains('open'))$('#scrim').classList.remove('open')}
+$('#toCheckout').addEventListener('click',openCo);$('#closeCo').addEventListener('click',closeCo);
+const val=id=>$('#'+id).value.trim();
+const esc=s=>s.replace(/[&<>"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
+function validate1(){const need=isID?[['fNama','nama'],['fWa','nomor WhatsApp'],['fKota','kota/negara'],['fAlamat','alamat']]:[['fNama','name'],['fWa','WhatsApp number'],['fKota','city/country'],['fAlamat','address']];const miss=[];
+  for(const[id,l]of need){const bad=!val(id);$('#'+id).classList.toggle('bad',bad);if(bad)miss.push(l)}
+  if(miss.length){$('#err1').textContent=L(`Please fill in your ${miss.join(', ')}.`,`Lengkapi ${miss.join(', ')} dulu.`);return false}
+  const wa=val('fWa').replace(/[^0-9+]/g,'');if(!/^\+?\d{9,15}$/.test(wa)){$('#fWa').classList.add('bad');$('#err1').textContent=L("That WhatsApp number doesn't look right. Example: +62 812 3456 7890 or +65 9123 4567.",'Nomor WhatsApp belum benar. Contoh: 0812 3456 7890 atau +65 9123 4567.');return false}
+  $('#err1').textContent='';return true}
+const radio=n=>document.querySelector(`input[name="${n}"]:checked`).closest('span').textContent.trim();
+function buildRecap(){$('#recap').innerHTML=cart.map(it=>{const{pr,g}=info(it);return`<div class="ln"><span>${pr.name} · ${g.name}</span><span>${it.q} kg</span></div>`}).join('')+
+  `<div class="ln" style="border-top:1px solid var(--line);padding-top:8px;font-weight:700"><span>Total</span><span>${totalKg()} kg</span></div>
+  <p class="note">${radio('tipe')} · ${radio('kirim')}. ${L('Deliver to','Dikirim ke')} ${esc(val('fNama'))}${val('fPt')?' ('+esc(val('fPt'))+')':''}, ${esc(val('fAlamat'))}, ${esc(val('fKota'))}. ${L('Winros sales will send a price quotation and shipping cost.','Sales Winros akan mengirim penawaran harga dan ongkos kirim.')}</p>`}
+function finish(){const d=new Date();const code='WRS-'+d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0')+'-'+Math.random().toString(36).slice(2,6).toUpperCase();
+  const lines=cart.map(it=>{const{pr,g}=info(it);return`- ${pr.name} (${pr.en}) ${g.name}: ${it.q} kg`});
+  const W=isID?{hi:'Halo Winros, saya mau pesan kemenyan.',code:'Kode',type:'Jenis transaksi',ship:'Pengiriman',name:'Nama',co:'Perusahaan',addr:'Alamat',note:'Catatan',end:'Mohon penawaran harga dan ongkos kirimnya.'}:{hi:"Hello Winros, I'd like to order kemenyan.",code:'Code',type:'Transaction type',ship:'Delivery',name:'Name',co:'Company',addr:'Address',note:'Notes',end:'Please send the price quotation and shipping cost.'};
+  const txt=`${W.hi}\n${W.code}: ${code}\n\n${lines.join('\n')}\nTotal: ${totalKg()} kg\n\n${W.type}: ${radio('tipe')}\n${W.ship}: ${radio('kirim')}\n${W.name}: ${val('fNama')}`+(val('fPt')?`\n${W.co}: ${val('fPt')}`:'')+`\nWA: ${val('fWa')}\n${W.addr}: ${val('fAlamat')}, ${val('fKota')}`+(val('fNote')?`\n${W.note}: ${val('fNote')}`:'')+`\n\n${W.end}`;
+  $('#orderCode').textContent=code;$('#orderText').textContent=txt;$('#waLink').href=`https://wa.me/${WA_ADMIN}?text=${encodeURIComponent(txt)}`;
+  cart=[];save();renderCart();showStep(4)}
+$('#coNext').addEventListener('click',()=>{if(step===1){if(validate1())showStep(2)}else if(step===2)showStep(3);else if(step===3)finish();else closeCo()});
+$('#coBack').addEventListener('click',()=>showStep(Math.max(1,step-1)));
+$('#copyOrder').addEventListener('click',()=>{const t=$('#orderText').textContent;const fb=()=>{const s=getSelection(),r=document.createRange();r.selectNodeContents($('#orderText'));s.removeAllRanges();s.addRange(r);toast(L('Text selected, press copy','Teks sudah ditandai, tekan salin'))};
+  try{navigator.clipboard.writeText(t).then(()=>toast(L('Summary copied','Ringkasan disalin')),fb)}catch(e){fb()}});
+$('#coForm').addEventListener('submit',e=>e.preventDefault());
+
+
+/* ===== tambahan 17 Nov 2026: angka, tombol WhatsApp B2B, pilihan bahasa ===== */
+function countUp(root){root.querySelectorAll('.num').forEach(el=>{const n=+el.dataset.n,pre=el.dataset.pre||'',suf=el.dataset.suf||'';
+  if(RM){el.textContent=pre+n+suf;return}const t0=performance.now();
+  const step=t=>{const k=clamp((t-t0)/1300);el.textContent=pre+Math.round(n*ease(k))+suf;if(k<1)requestAnimationFrame(step)};el.textContent=pre+'0'+suf;requestAnimationFrame(step)})}
+const io2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){countUp(e.target);io2.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.stats,.world').forEach(s=>io2.observe(s));
+
+function waText(kind,prod){const p=prod||(PRODUCTS[cfg.prod].name+' '+curGrade().name);
+  return({sample:L(`Hello Winros, I would like to request a sample of ${p}.`,`Halo Winros, saya mau minta sampel ${p}.`),
+    quote:L(`Hello Winros, I would like a quotation for ${p}.`,`Halo Winros, saya mau minta penawaran harga ${p}.`),
+    spec:L(`Hello Winros, please send the specifications for ${p} (grade, moisture, packing, MOQ, lead time).`,`Halo Winros, mohon kirim spesifikasi ${p} (grade, kadar air, kemasan, MOQ, lead time).`),
+    chat:L('Hello Winros, I would like to ask about your products.','Halo Winros, saya mau tanya produknya.')})[kind]}
+document.querySelectorAll('[data-wa]').forEach(a=>{a.target='_blank';a.rel='noopener';
+  const upd=()=>{a.href=`https://wa.me/${WA_ADMIN}?text=${encodeURIComponent(waText(a.dataset.wa,a.dataset.prod))}`};upd();
+  a.addEventListener('pointerdown',upd);a.addEventListener('focus',upd)});
+document.querySelectorAll('[data-order]').forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.order;selectCfg(k,PRODUCTS[k].grades[0].id);$('#belanja').scrollIntoView({behavior:RM?'auto':'smooth'})}));
+
+function drawIngs(t){ING.forEach(o=>{const r=$(o.cv).getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight&&(!RM||!o.done)){drawIng(o,t);o.done=true}})}
+
+/* bahasa: tombol globe di menu, tautan di footer, dan bilah pilihan di atas (seperti apple.com) */
+$('#langBtn').addEventListener('click',()=>setLang(isID?'en':'id'));
+document.querySelectorAll('[data-setlang]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();setLang(a.dataset.setlang)}));
+(function(){let saved=null,dis=null,hasQ=false;try{saved=localStorage.getItem('winros-lang');dis=localStorage.getItem('winros-langbar')}catch(e){}
+  try{hasQ=new URLSearchParams(location.search).has('lang')}catch(e){}
+  if(saved||dis||hasQ)return;
+  const sug=isID?'en':'id',bar=$('#langbar');
+  $('#langMsg').textContent=sug==='id'?'Pilih bahasa lain untuk melihat situs ini dalam Bahasa Indonesia.':'Choose another language to view this site in English.';
+  $('#langGo').textContent=sug==='id'?'Lanjutkan':'Continue';$('#langSel').value=sug;bar.hidden=false;
+  const navH=()=>document.documentElement.style.setProperty('--navh',$('#nav').offsetHeight+'px');navH();addEventListener('resize',navH);
+  const close=()=>{bar.hidden=true;navH();try{localStorage.setItem('winros-langbar','x')}catch(e){}};
+  $('#langX').addEventListener('click',close);
+  $('#langGo').addEventListener('click',()=>{const v=$('#langSel').value;if(v===LANG)close();else setLang(v)});
+})();
+
+/* ===== loop ===== */
+function resize(){ING.forEach(o=>o.done=false);sizeGrades();scenes.forEach(s=>s.dirty=true);cardViews.forEach(v=>v.draw());shopView.draw();drawMap(0)}
+addEventListener('resize',()=>{clearTimeout(resize.t);resize.t=setTimeout(resize,120)});
+function frame(t){
+  for(const s of scenes){const{p,vis}=progressOf(s.el);if(!vis)continue;if(s.anim||s.dirty||Math.abs(p-s.last)>.0005){s.draw(p,t);s.last=p;s.dirty=false}}
+  revealUpdate();drawIngs(t);const mr=cvMap.getBoundingClientRect();if(mr.bottom>0&&mr.top<innerHeight&&!RM)drawMap(t);
+  requestAnimationFrame(frame)}
+renderCfg();renderCart();
+['big.jpg','mata.jpg','yellow.webp'].forEach(img);
+let started=false;const go=()=>{if(started)return;started=true;resize();requestAnimationFrame(frame)};
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(go);setTimeout(go,1200);
+</script>
+</body>
+</html>
