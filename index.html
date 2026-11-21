@@ -1037,7 +1037,13 @@ scene('hero',(p,t)=>{
     const a=Math.sin(Math.PI*k)*.11;const g=c.createRadialGradient(s.x,s.y,0,s.x,s.y,s.s*3);
     g.addColorStop(0,`rgba(${Math.round(lerp(160,140,k))},${Math.round(lerp(150,135,k))},${Math.round(lerp(135,125,k))},${a})`);g.addColorStop(1,'rgba(150,135,120,0)');c.fillStyle=g;c.beginPath();c.arc(s.x,s.y,s.s*3,0,TAU);c.fill()}
   c.restore();
-  drawPiece(c,bx,by,m*lerp(.085,.13,z),heroPiece,PAL.kasar,{angle:t*.00008,detail:z>.3});
+  /* 21 Nov 2026 (Kak Intan: gambarnya masih begini): bongkahan buatan komputer diganti FOTO ASLI Menyan Madu grade Big */
+  {const im=img('big.jpg'),R=m*lerp(.2,.3,z);
+   if(ok(im)){c.save();c.beginPath();c.arc(bx,by,R,0,TAU);c.closePath();c.shadowColor='rgba(60,40,20,.35)';c.shadowBlur=30;c.shadowOffsetY=14;c.fillStyle='#ece3d4';c.fill();c.restore();
+     c.save();c.beginPath();c.arc(bx,by,R,0,TAU);c.clip();const sc=(R*2)/Math.min(im.naturalWidth,im.naturalHeight)*(1.08+(RM?0:Math.sin(t*.0004)*.02));
+     c.drawImage(im,bx-im.naturalWidth*sc/2,by-im.naturalHeight*sc/2,im.naturalWidth*sc,im.naturalHeight*sc);c.restore();
+     c.beginPath();c.arc(bx,by,R+8,0,TAU);c.strokeStyle='rgba(201,164,108,.9)';c.lineWidth=2;c.stroke()}
+   else drawPiece(c,bx,by,m*lerp(.085,.13,z),heroPiece,PAL.kasar,{angle:t*.00008,detail:z>.3});}
   heroCopy.style.transform=`scale(${1-z*.18})`;heroCopy.style.opacity=String(clamp(1-p*1.6));heroCopy.style.filter=p>.05?`blur(${p*8}px)`:'none';
 },{anim:true});
 
