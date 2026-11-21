@@ -471,6 +471,14 @@ html:lang(ur) body{line-height:1.9}
 .pohon-kredit{position:absolute;right:max(12px,env(safe-area-inset-right,0px));bottom:10px;margin:0;font-size:.7rem;color:rgba(255,255,255,.85);text-shadow:0 1px 6px rgba(0,0,0,.6);max-width:calc(100% - 24px);text-align:right;z-index:3}
 .pohon-kredit a{color:inherit}
 .pohon-kredit[hidden]{display:none}
+
+/* foto gambir + ajakan hubungi sales (21 Nov 2026) */
+.gambir-foto{margin:18px 0 10px;border-radius:14px;overflow:hidden;background:#ece3d4;border:1px solid rgba(201,164,108,.35)}
+.gambir-foto img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.gambir-foto figcaption{padding:8px 12px;font-size:.82rem;color:#5d5a52;display:grid;gap:2px}
+.gambir-foto small{font-size:.7rem;opacity:.8}
+.gambir-foto small a{color:inherit}
+.gambir-sales{margin:6px 0 12px;font-size:.95rem}
 </style>
 </head>
 <body>
@@ -612,7 +620,14 @@ html:lang(ur) body{line-height:1.9}
           <li><b data-id="Satu bahan, banyak industri">One ingredient, many industries</b><span data-id="Katekin dibutuhkan industri farmasi, kosmetik, batik, dan cat; gambir juga dipakai sebagai pewarna.">Catechin is used by the pharmaceutical, cosmetics, batik and paint industries; gambier is also used as a dye.</span></li>
           <li><b data-id="Permintaan stabil">Steady demand</b><span data-id="Pembeli terbesar India (13–14 ribu ton per tahun), lalu Jepang, Tiongkok, Pakistan, Bangladesh, dan sebagian Eropa.">India is the largest buyer (13–14 thousand tonnes a year), followed by Japan, China, Pakistan, Bangladesh and parts of Europe.</span></li>
         </ol>
-        <div class="cta-row"><a class="btn btn-rose" data-wa="order" data-prod="Gambir" href="#kontak" data-id="Pesan Gambir">Order Gambir</a><a class="btn btn-ghost" data-wa="sample" data-prod="Gambir" href="#kontak" data-id="Minta sampel">Request a sample</a></div>
+        <!-- 21 Nov 2026 (Kak Intan): foto gambir bentuk ekspor dari sumber terbuka dulu; detail lebih lanjut langsung ke sales -->
+        <figure class="gambir-foto">
+          <img src="img/gambir-2.jpg" alt="Gambier cups drying on a bamboo tray" data-id-alt="Gambir bentuk mangkuk dijemur di tampah bambu" loading="lazy" width="1000" height="563">
+          <figcaption><span data-id="Gambir bentuk mangkuk/silinder (cup), bentuk yang lazim diperdagangkan untuk ekspor. Foto ilustrasi.">Gambier in cup / cylinder form, the shape commonly traded for export. Illustrative photo.</span>
+            <small><span data-id="Foto">Photo</span>: Wibowo Djatmiko (Wie146), <a href="https://commons.wikimedia.org/wiki/File:Gambier_140213-0029_bo.JPG" target="_blank" rel="noopener">CC BY-SA 3.0</a> &middot; Si Gam, <a href="https://commons.wikimedia.org/wiki/File:Gambir_di_Banda_Aceh.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a>, Wikimedia Commons</small></figcaption>
+        </figure>
+        <p class="gambir-sales" data-id="Bentuk, grade, kadar katekin, kemasan, MOQ, dan harga: <b>untuk detail lebih lanjut langsung hubungi sales kami.</b>">Form, grade, catechin content, packing, MOQ and price: <b>for further details, please contact our sales team directly.</b></p>
+        <div class="cta-row"><a class="btn btn-rose" data-wa="spec" data-prod="Gambir" href="#kontak" data-id="Hubungi sales">Contact sales</a><a class="btn btn-ghost" data-wa="sample" data-prod="Gambir" href="#kontak" data-id="Minta sampel">Request a sample</a></div>
       </div>
     </article>
   </section>
@@ -1123,8 +1138,9 @@ hokiShow(0);
 scene('hoki',p=>{const i=Math.min(3,Math.floor(p*4.2));document.querySelectorAll('.hoki-letters span').forEach((s,k)=>{s.classList.toggle('on',k===i);s.classList.toggle('done',k<i)});
   if(i!==hokiIdx)hokiShow(i)});
 
-/* ilustrasi tiga bahan (gaya konsep: resin dekoratif di latar krem) - foto asli dipakai untuk 2 kemenyan */
-const ING=[{cv:'#cvIngA',kind:'photo',img:'mata.jpg'},{cv:'#cvIngB',kind:'blocks'},{cv:'#cvIngC',kind:'gambir'}];
+/* ilustrasi tiga bahan (gaya konsep: resin dekoratif di latar krem) - foto asli: Menyan Madu & Gambir (21 Nov 2026,
+   gambir-1.jpg = Wibowo Djatmiko (Wie146), Wikimedia Commons, CC BY-SA 3.0, gambir pasar Bogor) */
+const ING=[{cv:'#cvIngA',kind:'photo',img:'mata.jpg'},{cv:'#cvIngB',kind:'blocks'},{cv:'#cvIngC',kind:'photo',img:'gambir-1.jpg'}];
 const gambirR=rng(77);const gambirCubes=[...Array(7)].map(()=>({x:gambirR(),y:gambirR(),r:(gambirR()-.5)*.5,s:.7+gambirR()*.5,t:gambirR()}));
 function drawIng(o,t){const cv=$(o.cv);const[c,w,h]=fit(cv);c.fillStyle='#ece3d4';c.fillRect(0,0,w,h);const m=Math.min(w,h);const bob=RM?0:Math.sin(t*.0012)*m*.01;
   if(o.kind==='photo'){const im=img(o.img);if(ok(im)){const R=m*.38;c.save();c.beginPath();c.arc(w/2,h/2+bob,R,0,TAU);c.clip();const s=(R*2)/Math.min(im.naturalWidth,im.naturalHeight)*1.05;c.drawImage(im,w/2-im.naturalWidth*s/2,h/2+bob-im.naturalHeight*s/2,im.naturalWidth*s,im.naturalHeight*s);c.restore();

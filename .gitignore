@@ -1,2 +1,4 @@
 _src/
 __pycache__/
+*.bak-*
+_src.bak-*/
