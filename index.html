@@ -479,6 +479,9 @@ html:lang(ur) body{line-height:1.9}
 .gambir-foto small{font-size:.7rem;opacity:.8}
 .gambir-foto small a{color:inherit}
 .gambir-sales{margin:6px 0 12px;font-size:.95rem}
+
+.foot-kredit{font-size:.7rem;opacity:.7;margin-top:6px}
+.foot-kredit a{color:inherit}
 </style>
 </head>
 <body>
@@ -623,8 +626,6 @@ html:lang(ur) body{line-height:1.9}
         <!-- 21 Nov 2026 (Kak Intan): foto gambir bentuk ekspor dari sumber terbuka dulu; detail lebih lanjut langsung ke sales -->
         <figure class="gambir-foto">
           <img src="img/gambir-2.jpg" alt="Gambier cups drying on a bamboo tray" data-id-alt="Gambir bentuk mangkuk dijemur di tampah bambu" loading="lazy" width="1000" height="563">
-          <figcaption><span data-id="Gambir bentuk mangkuk/silinder (cup), bentuk yang lazim diperdagangkan untuk ekspor. Foto ilustrasi.">Gambier in cup / cylinder form, the shape commonly traded for export. Illustrative photo.</span>
-            <small><span data-id="Foto">Photo</span>: Wibowo Djatmiko (Wie146), <a href="https://commons.wikimedia.org/wiki/File:Gambier_140213-0029_bo.JPG" target="_blank" rel="noopener">CC BY-SA 3.0</a> &middot; Si Gam, <a href="https://commons.wikimedia.org/wiki/File:Gambir_di_Banda_Aceh.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a>, Wikimedia Commons</small></figcaption>
         </figure>
         <p class="gambir-sales" data-id="Bentuk, grade, kadar katekin, kemasan, MOQ, dan harga: <b>untuk detail lebih lanjut langsung hubungi sales kami.</b>">Form, grade, catechin content, packing, MOQ and price: <b>for further details, please contact our sales team directly.</b></p>
         <div class="cta-row"><a class="btn btn-rose" data-wa="spec" data-prod="Gambir" href="#kontak" data-id="Hubungi sales">Contact sales</a><a class="btn btn-ghost" data-wa="sample" data-prod="Gambir" href="#kontak" data-id="Minta sampel">Request a sample</a></div>
@@ -809,6 +810,7 @@ html:lang(ur) body{line-height:1.9}
   <div style="display:flex;gap:14px;align-items:center"><img src="img/logo-icon.png" alt="" width="40" height="40" style="height:40px;width:auto"><div><strong>PT Winros Sukses Indonesia</strong><br>Gum Benzoin (Menyan Madu) · Gum Benjamin (Menyan Bakar) · Gambir</div></div>
   <div class="foot-lang"><span data-id="Bahasa:">Language:</span> <a href="?lang=en" data-setlang="en">English</a> · <a href="?lang=id" data-setlang="id">Bahasa Indonesia</a></div>
   <div>© 2026 PT Winros Sukses Indonesia · <span data-id="Jakarta Barat">West Jakarta</span></div>
+  <div class="foot-kredit"><span data-id="Kredit foto">Photo credits</span>: <a href="https://commons.wikimedia.org/wiki/File:Styr_parallelon_160625-60497_tpl.JPG" target="_blank" rel="noopener">Wibowo Djatmiko (Wie146)</a> (CC BY-SA) · <a href="https://commons.wikimedia.org/wiki/File:Gambier_140213-0029_bo.JPG" target="_blank" rel="noopener">Wibowo Djatmiko, gambir</a> (CC BY-SA 3.0) · <a href="https://commons.wikimedia.org/wiki/File:Gambir_di_Banda_Aceh.jpg" target="_blank" rel="noopener">Si Gam</a> (CC BY-SA 4.0) · <span data-id="tekstur kayu">wood texture</span>: <a href="https://polyhaven.com/a/dark_wood" target="_blank" rel="noopener">Poly Haven</a> (CC0)</div>
 </div></footer>
 
 <div class="scrim" id="scrim"></div>
@@ -1037,10 +1039,10 @@ scene('hero',(p,t)=>{
     const a=Math.sin(Math.PI*k)*.11;const g=c.createRadialGradient(s.x,s.y,0,s.x,s.y,s.s*3);
     g.addColorStop(0,`rgba(${Math.round(lerp(160,140,k))},${Math.round(lerp(150,135,k))},${Math.round(lerp(135,125,k))},${a})`);g.addColorStop(1,'rgba(150,135,120,0)');c.fillStyle=g;c.beginPath();c.arc(s.x,s.y,s.s*3,0,TAU);c.fill()}
   c.restore();
-  /* 21 Nov 2026 (Kak Intan: gambarnya masih begini): bongkahan buatan komputer diganti FOTO ASLI Menyan Madu grade Big */
-  {const im=img('big.jpg'),R=m*lerp(.2,.3,z);
+  /* 21 Nov 2026 (Kak Intan): bongkahan buatan komputer diganti FOTO ASLI bongkahan Menyan Madu di atas papan kayu */
+  {const im=img('hero-kemenyan.jpg'),R=m*lerp(.22,.32,z);
    if(ok(im)){c.save();c.beginPath();c.arc(bx,by,R,0,TAU);c.closePath();c.shadowColor='rgba(60,40,20,.35)';c.shadowBlur=30;c.shadowOffsetY=14;c.fillStyle='#ece3d4';c.fill();c.restore();
-     c.save();c.beginPath();c.arc(bx,by,R,0,TAU);c.clip();const sc=(R*2)/Math.min(im.naturalWidth,im.naturalHeight)*(1.08+(RM?0:Math.sin(t*.0004)*.02));
+     c.save();c.beginPath();c.arc(bx,by,R,0,TAU);c.clip();const sc=(R*2)/Math.min(im.naturalWidth,im.naturalHeight)*(1+(RM?0:Math.sin(t*.0004)*.01));
      c.drawImage(im,bx-im.naturalWidth*sc/2,by-im.naturalHeight*sc/2,im.naturalWidth*sc,im.naturalHeight*sc);c.restore();
      c.beginPath();c.arc(bx,by,R+8,0,TAU);c.strokeStyle='rgba(201,164,108,.9)';c.lineWidth=2;c.stroke()}
    else drawPiece(c,bx,by,m*lerp(.085,.13,z),heroPiece,PAL.kasar,{angle:t*.00008,detail:z>.3});}
