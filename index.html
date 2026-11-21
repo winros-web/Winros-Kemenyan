@@ -513,7 +513,7 @@ html:lang(ur) body{line-height:1.9}
       <canvas class="bg" id="cvHero" aria-hidden="true"></canvas>
       <div class="hero-copy wrap" id="heroCopy">
         <img class="brand-logo" src="img/logo.png" alt="PT Winros Sukses Indonesia">
-        <span class="eyebrow" data-id="Bahan botani Indonesia · sejak 2017">Indonesian botanical ingredients · since 2017</span>
+        <span class="eyebrow" data-id="Bahan botani Indonesia · lebih dari 80 tahun">Indonesian botanical ingredients · over 80 years</span>
         <h1 data-id="Getah Kemenyan <b>yang harum.</b>">Fragrant <b>gum benzoin.</b></h1>
         <p class="lead" data-id="Bahan alam terbaik, dari Indonesia untuk dunia: Menyan Madu (Gum Benzoin) dalam 10 grade, Menyan Bakar (Gum Benjamin) dalam 11 varian, dan Gambir.">Nature's finest, from Indonesia to the world: Gum Benzoin (Menyan Madu) in 10 grades, Gum Benjamin (Menyan Bakar) in 11 variants, and Gambir.</p>
         <div class="cta-row">
@@ -705,11 +705,11 @@ html:lang(ur) body{line-height:1.9}
 
   <section class="scene since" id="tentang" data-scene="since" aria-label="About Winros" data-id-aria="Tentang Winros">
     <div class="pin"><div class="wrap since-grid">
-      <div><div class="year" id="yearVal">2017</div><div class="year-sub" id="yearSub"></div></div>
+      <div><div class="year" id="yearVal">80+</div><div class="year-sub" id="yearSub"></div></div>
       <div class="since-copy">
         <span class="eyebrow" data-id="Sejarah perusahaan">Company history</span>
         <h2 data-id="Distribusi hasil <b>pertanian dan perkebunan.</b>">Distributing agricultural <b>and plantation products.</b></h2>
-        <p data-id="PT Winros Sukses Indonesia didirikan pada April 2017 dan bergerak di bidang pertanian dan perkebunan. Bisnisnya tumbuh lewat berbagai langkah terobosan. Dengan menjaga kualitas barang yang diperdagangkan, Winros terus berkembang memenuhi kebutuhan konsumen.">PT Winros Sukses Indonesia was founded in April 2017 and works in agriculture and plantations. The business has grown through a series of breakthroughs. By keeping the quality of every product it trades, Winros keeps growing to meet its customers' needs.</p>
+        <p data-id="Berakar dari pabrik keluarga yang sudah berjalan lebih dari 80 tahun dan diwariskan turun-temurun, kini dijalankan PT Winros Sukses Indonesia di bidang pertanian dan perkebunan. Dengan menjaga kualitas barang yang diperdagangkan, Winros terus berkembang memenuhi kebutuhan konsumen.">Rooted in a family factory with more than 80 years of history, passed down from generation to generation, and now run by PT Winros Sukses Indonesia in agriculture and plantations. By keeping the quality of every product it trades, Winros keeps growing to meet its customers' needs.</p>
         <div class="facts">
           <div><strong>10</strong><span data-id="grade Menyan Madu">grades of Menyan Madu</span></div>
           <div><strong>11</strong><span data-id="varian Menyan Bakar">variants of Menyan Bakar</span></div>
@@ -1127,9 +1127,9 @@ const gradesSec=$('#grade');
 function sizeGrades(){const extra=Math.max(0,track.scrollWidth-innerWidth);gradesSec.style.height=(innerHeight+extra)+'px';gradesSec.dataset.extra=extra}
 scene('grades',p=>{track.style.transform=`translateX(${-p*(+gradesSec.dataset.extra||0)}px)`});
 
-/* since 2017 */
-scene('since',p=>{const y=Math.round(lerp(2017,2026,ease(seg(p,.15,.85))));$('#yearVal').textContent=y;const n=y-2017;
-  $('#yearSub').textContent=y===2017?L('Founded April 2017 · West Jakarta','Berdiri April 2017 · Jakarta Barat'):Lf(n>1?'{n} years in business · West Jakarta':'{n} year in business · West Jakarta','{n} tahun berjalan · Jakarta Barat',{n})});
+/* 21 Nov 2026: usaha keluarga 80+ tahun, turun-temurun (bukan lagi 'berdiri 2017') */
+scene('since',p=>{const n=Math.round(lerp(1,80,ease(seg(p,.15,.85))));$('#yearVal').textContent=n+(n>=80?'+':'');
+  $('#yearSub').textContent=L('years of family heritage, passed down through generations','tahun usaha keluarga, diwariskan turun-temurun')});
 
 /* HOKI */
 let hokiIdx=-1;
