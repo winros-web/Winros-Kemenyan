@@ -625,7 +625,7 @@ html:lang(ur) body{line-height:1.9}
         </ol>
         <!-- 21 Nov 2026 sore (Kak Intan): foto gambir diganti foto asli gudang Winros; detail lebih lanjut langsung ke sales -->
         <figure class="gambir-foto">
-          <img src="img/gambir-2.jpg" alt="Gambier cups drying on racks at the Winros warehouse" data-id-alt="Gambir bentuk mangkuk dikeringkan di rak gudang Winros" loading="lazy" width="1000" height="750">
+          <img src="img/gambir-2.jpg?v=2611" alt="Gambier cups drying on racks at the Winros warehouse" data-id-alt="Gambir bentuk mangkuk dikeringkan di rak gudang Winros" loading="lazy" width="1000" height="750">
         </figure>
         <p class="gambir-sales" data-id="Bentuk, grade, kadar katekin, kemasan, MOQ, dan harga: <b>untuk detail lebih lanjut langsung hubungi sales kami.</b>">Form, grade, catechin content, packing, MOQ and price: <b>for further details, please contact our sales team directly.</b></p>
         <div class="cta-row"><a class="btn btn-rose" data-wa="spec" data-prod="Gambir" href="#kontak" data-id="Hubungi sales">Contact sales</a><a class="btn btn-ghost" data-wa="sample" data-prod="Gambir" href="#kontak" data-id="Minta sampel">Request a sample</a></div>
@@ -1148,7 +1148,7 @@ scene('hoki',p=>{const i=Math.min(3,Math.floor(p*4.2));document.querySelectorAll
 
 /* ilustrasi tiga bahan (gaya konsep: resin dekoratif di latar krem) - foto asli: Menyan Madu & Gambir (21 Nov 2026,
    gambir-1.jpg = foto asli tumpukan gambir di gudang Winros, Kak Intan 21 Nov 2026 sore) */
-const ING=[{cv:'#cvIngA',kind:'photo',img:'mata.jpg'},{cv:'#cvIngB',kind:'blocks'},{cv:'#cvIngC',kind:'photo',img:'gambir-1.jpg'}];
+const ING=[{cv:'#cvIngA',kind:'photo',img:'mata.jpg'},{cv:'#cvIngB',kind:'blocks'},{cv:'#cvIngC',kind:'photo',img:'gambir-1.jpg?v=2611'}];
 const gambirR=rng(77);const gambirCubes=[...Array(7)].map(()=>({x:gambirR(),y:gambirR(),r:(gambirR()-.5)*.5,s:.7+gambirR()*.5,t:gambirR()}));
 function drawIng(o,t){const cv=$(o.cv);const[c,w,h]=fit(cv);c.fillStyle='#ece3d4';c.fillRect(0,0,w,h);const m=Math.min(w,h);const bob=RM?0:Math.sin(t*.0012)*m*.01;
   if(o.kind==='photo'){const im=img(o.img);if(ok(im)){const R=m*.38;c.save();c.beginPath();c.arc(w/2,h/2+bob,R,0,TAU);c.clip();const s=(R*2)/Math.min(im.naturalWidth,im.naturalHeight)*1.05;c.drawImage(im,w/2-im.naturalWidth*s/2,h/2+bob-im.naturalHeight*s/2,im.naturalWidth*s,im.naturalHeight*s);c.restore();
